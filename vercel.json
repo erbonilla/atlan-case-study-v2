@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Atlan Case Study.html" },
+    { "source": "/deep-dive", "destination": "/Atlan Case Study - Deep Dive.html" },
+    { "source": "/deck", "destination": "/Atlan Deck.html" },
+    { "source": "/print", "destination": "/Atlan Case Study-print.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*\\.jsx)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/javascript; charset=utf-8"
+        }
+      ]
+    }
+  ]
+}

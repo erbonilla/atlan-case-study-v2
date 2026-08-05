@@ -1,0 +1,431 @@
+/* ─── Hero ───────────────────────────────────────────────────── */
+.hero {
+  padding: 64px 64px 80px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .hero { padding: 48px 28px 56px; }
+}
+
+.hero-tick {
+  display: block;
+  width: 96px;
+  height: 3px;
+  background: var(--coral);
+  opacity: var(--coral-mix, 1);
+}
+
+.hero-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.hero-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hero-brand-mark {
+  width: 72px;
+  height: 72px;
+  display: block;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(236, 247, 248, 0.12),
+    0 0 0 1px rgba(14, 138, 154, 0.22),
+    0 18px 40px -16px rgba(14, 138, 154, 0.55);
+}
+
+.hero-brand-mark--centered {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+  .hero-brand-mark { width: 56px; height: 56px; }
+  .hero-brand-mark--centered { width: 72px; height: 72px; }
+  .hero-brand-lockup { gap: 14px; }
+}
+
+.hero-meta-inline {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--foam-72);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dotsep {
+  color: var(--foam-40);
+}
+
+/* Editorial layout (default) */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+.hero-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(54px, 7vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--foam);
+  margin-top: 32px;
+  text-wrap: balance;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--coral);
+}
+
+.hero-title--centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-deck {
+  font-family: var(--body);
+  font-weight: 300;
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.55;
+  color: var(--foam-72);
+  margin-top: 28px;
+  max-width: 540px;
+}
+
+.hero-deck--centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--foam-16);
+}
+
+.hero-stats--wide {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.hero-stats--centered {
+  margin-top: 72px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .hero-stats, .hero-stats--wide { grid-template-columns: repeat(2, 1fr); }
+}
+
+.stat { display: flex; flex-direction: column; gap: 6px; }
+
+.stat-n {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--foam);
+  font-feature-settings: 'tnum' on;
+}
+
+.stat-l {
+  font-family: var(--body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--foam-56);
+}
+
+/* Hero art */
+.hero-art {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--abyss-deep);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+
+.hero-art-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(180deg, transparent, rgba(6,26,38,0.85));
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-art-note {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--foam-72);
+}
+
+/* Magazine layout */
+.hero-mag-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero-mag-meta {
+  display: flex;
+  gap: 36px;
+  font-family: var(--body);
+  font-size: 12.5px;
+  color: var(--foam-72);
+  flex-wrap: wrap;
+}
+
+.hero-mag-meta .label {
+  display: block;
+  color: var(--tide-soft);
+  margin-bottom: 4px;
+}
+
+.hero-mag-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(56px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--foam);
+  text-wrap: balance;
+  margin-bottom: 48px;
+}
+
+.hero-mag-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--coral);
+}
+
+.hero-mag-deck-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .hero-mag-deck-row { grid-template-columns: 1fr; }
+}
+
+.hero-mag-art {
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--abyss-deep);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+
+.hero-mag-bottom { margin-top: 56px; }
+
+/* Centered layout */
+.hero--centered { position: relative; }
+
+.hero-centered-art-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.40;
+}
+
+.hero-centered-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 40%, transparent 0%, rgba(11,42,60,0.7) 70%, rgba(6,26,38,0.95) 100%);
+}
+
+.hero-centered-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-centered-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+  padding: 80px 0 56px;
+}
+
+.hero-byline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--foam-56);
+  margin-top: 12px;
+}
+
+/* Hero divider */
+.hero-divider {
+  height: 1px;
+  background: var(--foam-16);
+  margin: 88px 0 48px;
+}
+
+/* Hero foot — role card + meta */
+.hero-foot {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .hero-foot { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* Role card */
+.role-card { display: flex; flex-direction: column; gap: 32px; }
+
+.role-rows { display: flex; flex-direction: column; }
+
+.role-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--abyss-08);
+  align-items: baseline;
+}
+
+.role-card--inverse .role-row { border-bottom-color: var(--foam-16); }
+
+.role-row:first-child {
+  border-top: 1px solid var(--abyss-08);
+}
+
+.role-card--inverse .role-row:first-child { border-top-color: var(--foam-16); }
+
+.role-key {
+  font-family: var(--body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+}
+
+.role-card--inverse .role-key { color: var(--tide-soft); }
+
+.role-val {
+  font-family: var(--body);
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--abyss-72);
+}
+
+.role-card--inverse .role-val { color: var(--foam-92); }
+
+.role-pull {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--abyss);
+  padding-left: 22px;
+  border-left: 2px solid var(--coral);
+  margin-top: 12px;
+}
+
+.role-card--inverse .role-pull { color: var(--foam); }
+
+.hero-meta { padding-top: 4px; }
+
+/* Hero preview ("what follows") */
+.hero-preview {
+  margin-top: 88px;
+  padding-top: 32px;
+  border-top: 1px solid var(--foam-16);
+}
+
+.hero-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .hero-preview-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero-preview-grid { grid-template-columns: 1fr; }
+}
+
+.hero-preview-item {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 22px;
+  border: 1px solid var(--foam-16);
+  border-radius: 4px;
+  background: rgba(236,247,248,0.03);
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--foam);
+  transition: all 0.2s ease;
+}
+
+.hero-preview-item:hover {
+  background: rgba(236,247,248,0.08);
+  border-color: var(--coral);
+  transform: translateY(-2px);
+}
+
+.hero-preview-item .mono {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--coral);
+  letter-spacing: 0.06em;
+}

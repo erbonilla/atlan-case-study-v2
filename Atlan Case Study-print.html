@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Atlan UX Case Study — Edgar Bonilla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="case-study/styles.css" />
+<link rel="stylesheet" href="condensed/condensed.css" />
+<style>doc-page:not(:defined){visibility:hidden}
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+* { animation-delay: -99s !important; animation-duration: .001s !important; animation-iteration-count: 1 !important; animation-fill-mode: both !important; animation-play-state: running !important; transition-duration: 0s !important; }
+.cs-shell{max-width:none;padding:0}
+.cs-section{break-inside:avoid-page}
+.cs-decision, .cs-60-card, .cs-tradeoff, .cs-lang-pair, .cs-evidence-table{break-inside:avoid}
+h1,h2,h3{break-after:avoid}
+.print-fig-note{margin-top:24px;padding:16px 20px;border:1px dashed var(--abyss-24);border-radius:4px;font:400 13px/1.5 var(--body);color:var(--abyss-56)}
+</style>
+</head>
+<body>
+<doc-page margin="0.85in">
+<div className="cs-topbar" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--abyss-16);margin-bottom:8px">
+  <div style="display:flex;align-items:center;gap:12px">
+    <img src="assets/atlan_logo_bk.svg" alt="Atlan" width="36" height="36" style="border-radius:999px" />
+    <span style="font:600 15px/1 var(--display);color:var(--abyss)">atlan<span style="color:var(--coral)">.</span></span>
+  </div>
+  <span style="font:500 12px/1 var(--body);color:var(--abyss-40)">Full interactive figures at case-study-atlan.vercel.app</span>
+</div>
+
+<section class="cs-hero" style="padding:32px 0">
+  <span class="cs-status-chip"><span class="dot"></span>Self-initiated concept — functional prototype, not launched to users</span>
+  <h1>Designing a coaching PWA that adapts when life interrupts training.</h1>
+  <p class="cs-hero-summary">
+    Atlan is a self-initiated, offline-first coaching concept for bilingual endurance athletes.
+    I designed and built the product around one premise: when a demanding week disrupts training,
+    the system should adapt the plan instead of framing the athlete as a failure.
+  </p>
+  <div class="cs-chips">
+    <span class="cs-chip">Offline-first</span>
+    <span class="cs-chip">ES/EN parity</span>
+    <span class="cs-chip">Wet Mode</span>
+    <span class="cs-chip">WCAG-aware interface system</span>
+  </div>
+  <div class="cs-meta-row">
+    <span><strong>Role</strong> — Product strategy, UX/UI, brand system, prototype implementation</span>
+    <span><strong>Team</strong> — Solo concept</span>
+    <span><strong>Duration</strong> — ~10 weeks</span>
+    <span><strong>Platform</strong> — Offline-first PWA</span>
+    <span><strong>Languages</strong> — Spanish and English</span>
+  </div>
+  <div class="cs-hero-photo" style="margin-top:24px">
+    <img src="assets/photography/fig-hero-pool-sunrise.png" alt="Endurance athlete pushing off at sunrise, pool lane lines and coral floats" />
+  </div>
+</section>
+
+<section class="cs-section" style="padding:32px 0">
+  <div class="cs-eyebrow">The 60-second case</div>
+  <div class="cs-60-grid">
+    <div class="cs-60-card"><div class="k">Situation</div><p>Endurance products often expose either dense performance analysis or social motivation. This scenario required scientific depth without cognitive overload or punishment-based adherence mechanics.</p></div>
+    <div class="cs-60-card"><div class="k">Responsibility</div><p>I owned strategy, product framing, IA, content and voice rules, design-system decisions, key flows, interface design, and prototype implementation.</p></div>
+    <div class="cs-60-card"><div class="k">Intervention</div><p>I designed Session Swapper, Wet Mode, depth-on-demand explanations, and bilingual onboarding around environmental and cognitive constraints.</p></div>
+    <div class="cs-60-card"><div class="k">Evidence status</div><p>The prototype and accessibility properties are documented. Product-behavior effects remain hypotheses pending recruited research and in-context testing.</p></div>
+  </div>
+</section>
+
+<section class="cs-section" style="padding:32px 0">
+  <div class="cs-eyebrow">The decision that shaped the product</div>
+  <h2 class="cs-h2">"The meeting ran late." The plan is now wrong.</h2>
+  <div class="cs-spine">
+    <div class="cs-spine-row"><div class="cs-spine-n">01</div><div class="cs-spine-text"><strong>A demanding week runs long.</strong> Tomorrow's scheduled threshold session no longer fits the day that's left.</div></div>
+    <div class="cs-spine-row"><div class="cs-spine-n">02</div><div class="cs-spine-text"><strong>A rigid product fails here.</strong> It marks the session missed, or asks the athlete to manually replan around a fixed calendar grid.</div></div>
+    <div class="cs-spine-row"><div class="cs-spine-n">03</div><div class="cs-spine-text"><strong>Atlan proposes an alternative.</strong> A lower-cost session is offered in its place — reachable from the notification itself, no app-diving required.</div></div>
+    <div class="cs-spine-row"><div class="cs-spine-n">04</div><div class="cs-spine-text"><strong>One gesture resolves it.</strong> Swipe to accept the alternative, or tap "Skip today." Neither path is treated as a failure state.</div></div>
+    <div class="cs-spine-row"><div class="cs-spine-n">05</div><div class="cs-spine-text"><strong>The week recalculates, quietly.</strong> Periodization rebalances without exposing the math by default; depth is one tap away, not forced on the surface.</div></div>
+  </div>
+  <div class="cs-tradeoff">
+    <div class="k">Trade-off accepted</div>
+    <p>Silent recalculation reduces control and transparency on the primary surface. Atlan compensates with an optional explanation layer rather than displaying periodization detail by default.</p>
+  </div>
+</section>
+
+<section class="cs-section" style="padding:32px 0">
+  <div class="cs-eyebrow">Three product decisions</div>
+  <h2 class="cs-h2">The judgment calls that carry this study.</h2>
+  <div class="cs-decisions" style="margin-top:20px">
+    <div class="cs-decision">
+      <div class="cs-decision-head"><span class="cs-decision-n">Decision 01</span><h3>Adapt the week, not the blame.</h3></div>
+      <div class="cs-decision-grid">
+        <div class="cs-decision-field"><div class="k">Evidence</div><p>Disruption scenario above, paired with adherence literature on autonomy-supportive design.</p></div>
+        <div class="cs-decision-field"><div class="k">Decision</div><p>Session Swapper — notification-reachable, one-gesture, silent recalc.</p></div>
+        <div class="cs-decision-field"><div class="k">Rejected</div><p>A red "missed" state, manual calendar repair, or forced catch-up sessions.</p></div>
+        <div class="cs-decision-field"><div class="k">Trade-off</div><p>Less immediate visibility into how the recalculated plan was derived.</p></div>
+      </div>
+      <div class="cs-decision-field" style="margin-top:12px;border-top:1px solid var(--abyss-16);padding-top:12px"><div class="k">Validation needed</div><p>Comprehension, trust, acceptance rate, and downstream plan-correction behavior.</p></div>
+    </div>
+    <div class="cs-decision">
+      <div class="cs-decision-head"><span class="cs-decision-n">Decision 02</span><h3>Design for wet hands and sun glare.</h3></div>
+      <div class="cs-decision-grid">
+        <div class="cs-decision-field"><div class="k">Evidence</div><p>Poolside context research and the offline-first architectural requirement.</p></div>
+        <div class="cs-decision-field"><div class="k">Decision</div><p>Gross-motor swipe zones, 16:1 contrast, minimal controls — Wet Mode.</p></div>
+        <div class="cs-decision-field"><div class="k">Rejected</div><p>Small precision-tap buttons; any behavior that assumes a live connection.</p></div>
+        <div class="cs-decision-field"><div class="k">Trade-off</div><p>Reduced control density versus a standard touch interface.</p></div>
+      </div>
+      <div class="cs-decision-field" style="margin-top:12px;border-top:1px solid var(--abyss-16);padding-top:12px"><div class="k">Validation needed</div><p>Real pool deck, waterproof pouch, wet hands, sun glare, false-positive gesture rate.</p></div>
+    </div>
+    <div class="cs-decision">
+      <div class="cs-decision-head"><span class="cs-decision-n">Decision 03</span><h3>Keep the science one tap below the surface.</h3></div>
+      <div class="cs-decision-grid">
+        <div class="cs-decision-field"><div class="k">Evidence</div><p>Cognitive-fatigue framing from the reframe — depth without demand.</p></div>
+        <div class="cs-decision-field"><div class="k">Decision</div><p>"Why" affordance with source-backed, citation-grounded explanations.</p></div>
+        <div class="cs-decision-field"><div class="k">Rejected</div><p>Persistent charts on the main surface; unexplained simplification.</p></div>
+        <div class="cs-decision-field"><div class="k">Trade-off</div><p>Expert users take one additional action to inspect the underlying detail.</p></div>
+      </div>
+      <div class="cs-decision-field" style="margin-top:12px;border-top:1px solid var(--abyss-16);padding-top:12px"><div class="k">Validation needed</div><p>Discoverability of the "i" affordance, comprehension, and trust in the citation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-section" style="padding:32px 0">
+  <div class="cs-eyebrow">ES/EN content parity</div>
+  <div class="cs-lang-pair">
+    <div class="cs-lang-card"><div class="cs-lang-tag">EN — Session Swapper notification</div><div class="cs-lang-line">"Life happens. Want to swap tomorrow's 6 AM threshold set for a 30-minute easy aerobic on Wednesday? The week still works."</div></div>
+    <div class="cs-lang-card"><div class="cs-lang-tag">ES — same notification</div><div class="cs-lang-line">"La vida pasa así. ¿Cambiamos el set de umbral de las 6 AM de mañana por 30 minutos aeróbicos suaves el miércoles? La semana sigue funcionando."</div></div>
+  </div>
+  <div class="print-fig-note">Interactive figures (Wet Mode gesture grammar, the journey map, and the "Why" citation modal) are in the HTML version of this case study — omitted here for print clarity.</div>
+</section>
+
+<section class="cs-section" style="padding:32px 0">
+  <div class="cs-eyebrow">Evidence and validation plan</div>
+  <h2 class="cs-h2">What is measured. What is not.</h2>
+  <div class="cs-evidence-table">
+    <div class="cs-evidence-col"><div class="k">Evidence available</div><ul>
+      <li>Design-token contrast values (16:1 Wet Mode, 11.8:1 primary)</li>
+      <li>Documented Wet Mode touch-zone dimensions (320×360px)</li>
+      <li>Implemented offline behavior in the prototype</li>
+      <li>ES/EN prototype coverage at equal visual weight</li>
+      <li>Documented measurement plans with falsification conditions</li>
+    </ul></div>
+    <div class="cs-evidence-col"><div class="k">Evidence still needed</div><ul>
+      <li>Moderated usability testing</li>
+      <li>In-context pool testing (wet hands, sun glare)</li>
+      <li>Longitudinal adherence data</li>
+      <li>Native-speaker content validation</li>
+      <li>Retention and adoption data</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="cs-section cs-reflection" style="padding:32px 0">
+  <div class="cs-eyebrow">Reflection</div>
+  <h2 class="cs-h2">What I'd validate next.</h2>
+  <p style="margin-top:16px">
+    The concept became stronger when I stopped treating missed training as an edge case and made
+    disruption the organizing condition. The largest limitation is equally clear: the audience and
+    behavior assumptions have not been validated with a recruited panel. I would next
+    <em>test Wet Mode in a real pool environment, validate the disruption model with endurance
+    athletes, and review the training logic and citations with a qualified coach or sports-science
+    specialist.</em>
+  </p>
+</section>
+
+<section class="cs-section" style="padding:32px 0 8px">
+  <div class="cs-eyebrow">Credits &amp; disclosure</div>
+  <div class="cs-credits">
+    <div><p>Atlan is solo, self-initiated concept work — no client, team, or launch exists. The persona is a strategic synthesis from secondary literature, product reviews, forum patterns, and informal conversations, not a validated persona from a recruited research panel. AI tools (Cursor, Claude Code, Codex) accelerated implementation and this case study's layout; strategy, IA, the voice system, and every decision above are mine.</p></div>
+    <div>
+      <div style="font:700 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--abyss-40);margin-bottom:10px">Where this was solo, not a team</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+        <li style="font:400 14.5px/1.6 var(--body);color:var(--abyss-72)">— Product/PM input normally scopes cohort recruitment — self-reviewed against SDT literature here.</li>
+        <li style="font:400 14.5px/1.6 var(--body);color:var(--abyss-72)">— Engineering review of offline sync edge cases — simulated in the prototype, not load-tested.</li>
+        <li style="font:400 14.5px/1.6 var(--body);color:var(--abyss-72)">— A sports-science or coaching SME would need to sign off on the training logic and citations before any real launch.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div style="text-align:center;padding:24px 0 8px;font:500 12px/1 var(--body);color:var(--abyss-40)">Atlan Performance · Edgar Bonilla · May 2026 · erbonilla@outlook.com</div>
+</doc-page>
+<script src="doc-page.js"></script>
+</body>
+</html>

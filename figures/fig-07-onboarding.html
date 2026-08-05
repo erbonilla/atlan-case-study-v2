@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<template id="__bundler_thumbnail" data-bg-color="#0B2A3C">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><text x="30" y="60" font-size="30" font-family="serif" fill="#ECF7F8">EN</text><text x="55" y="60" font-size="30" font-family="serif" fill="#FF6A3D">ES</text></svg>
+</template>
+<title>Bilingual Onboarding — Atlan Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --abyss: #0B2A3C;
+  --abyss-deep: #061a26;
+  --abyss-92: rgba(11, 42, 60, 0.92);
+  --abyss-72: rgba(11, 42, 60, 0.72);
+  --abyss-56: rgba(11, 42, 60, 0.56);
+  --abyss-40: rgba(11, 42, 60, 0.40);
+  --abyss-24: rgba(11, 42, 60, 0.24);
+  --abyss-16: rgba(11, 42, 60, 0.16);
+  --abyss-08: rgba(11, 42, 60, 0.08);
+  --abyss-04: rgba(11, 42, 60, 0.04);
+  --tide: #0E8A9A;
+  --tide-deep: #0A6F7D;
+  --tide-soft: #BFE0E5;
+  --tide-pale: #DDEEF1;
+  --coral: #FF6A3D;
+  --coral-bright: #FF7E50;
+  --foam: #ECF7F8;
+  --foam-warm: #F4FAFB;
+  --paper: #FBFCFC;
+  --display: 'Fraunces', 'Georgia', serif;
+  --body: 'Manrope', 'Helvetica Neue', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--abyss);
+  font-family: var(--body);
+  color: var(--abyss);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 64px 32px;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 20%, rgba(14, 138, 154, 0.08), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 80%, rgba(255, 106, 61, 0.04), transparent 55%),
+    var(--abyss);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.onboarding-card {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--foam);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 32px 80px -16px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.onboarding-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 3px;
+  background: var(--coral);
+  z-index: 5;
+}
+
+/* HEADER */
+.card-header {
+  padding: 56px 64px 32px;
+}
+
+/* CONTEXT BAND */
+.context-band {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  isolation: isolate;
+}
+.context-band img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.context-caption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 28px 32px;
+  background: linear-gradient(180deg, transparent 0%, transparent 50%, rgba(11, 42, 60, 0.85) 100%);
+  color: var(--foam);
+}
+.context-tag {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.context-body {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.45;
+  max-width: 720px;
+  color: rgba(236, 247, 248, 0.94);
+}
+.eyebrow {
+  display: block;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 24px;
+}
+.card-title {
+  font-family: var(--display);
+  font-size: 64px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 144;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--abyss);
+  margin-bottom: 14px;
+}
+.card-subtitle {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  color: var(--abyss-72);
+  line-height: 1.45;
+  max-width: 720px;
+}
+
+/* FLOW SECTION */
+.flow-section {
+  padding: 32px 64px 56px;
+  border-top: 1px solid var(--abyss-08);
+}
+
+.section-eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--abyss);
+  margin-bottom: 36px;
+  max-width: 720px;
+}
+
+.flow-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 8px;
+}
+
+.phone-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.step-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.step-num {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+}
+.step-name {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss);
+  letter-spacing: -0.005em;
+}
+
+/* PHONE — compact for 4-up layout */
+.phone {
+  width: 240px;
+  height: 510px;
+  background: #0d0d0e;
+  border-radius: 32px;
+  padding: 8px;
+  position: relative;
+  box-shadow:
+    0 1px 0 1px rgba(255, 255, 255, 0.04),
+    0 16px 40px -8px rgba(0, 0, 0, 0.3);
+}
+.phone::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78px;
+  height: 18px;
+  background: #0d0d0e;
+  border-radius: 100px;
+  z-index: 10;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  background: var(--foam);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* STATUS BAR (compact) */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px 0;
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--abyss);
+}
+.status-bar .right { display: flex; gap: 5px; align-items: center; }
+
+/* SCREEN 1 — Language Selection */
+.lang-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 32px;
+  text-align: center;
+  position: relative;
+}
+.back-slot-reserved {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  visibility: hidden;
+}
+.brand-wordmark {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 600;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss);
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+  position: relative;
+}
+.brand-wordmark::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--coral);
+  margin: 8px auto 0;
+}
+.lang-question {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss);
+  letter-spacing: -0.005em;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+.lang-question-es {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss-56);
+  letter-spacing: -0.005em;
+  margin-bottom: 28px;
+}
+.lang-options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.lang-btn {
+  padding: 14px;
+  background: var(--paper);
+  border: 1.5px solid var(--abyss-24);
+  border-radius: 8px;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--abyss);
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+}
+.lang-btn::after {
+  content: '→';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--abyss-40);
+  font-weight: 400;
+}
+
+/* SCREEN 2 — Welcome */
+.welcome-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 22px 22px;
+}
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  color: var(--abyss-72);
+  margin-bottom: 30px;
+}
+.back-arrow svg { width: 9px; height: 14px; display: block; }
+.welcome-eyebrow {
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 10px;
+}
+.welcome-title {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  color: var(--abyss);
+  margin-bottom: 14px;
+}
+.welcome-body {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--abyss-72);
+  letter-spacing: 0.005em;
+  margin-bottom: auto;
+}
+.welcome-body strong {
+  font-weight: 600;
+  color: var(--abyss);
+}
+.cta-button {
+  padding: 13px;
+  background: var(--abyss);
+  color: var(--foam);
+  border-radius: 100px;
+  text-align: center;
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* SCREEN 3 — Grit Assessment */
+.grit-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 18px 18px;
+  position: relative;
+}
+.grit-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.back-arrow-sm {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  color: var(--abyss-72);
+}
+.back-arrow-sm svg { width: 8px; height: 12.5px; display: block; }
+.progress-pill {
+  font-family: var(--body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  background: var(--tide-pale);
+  padding: 3px 8px;
+  border-radius: 100px;
+}
+.grit-intro {
+  font-family: var(--body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+  margin-bottom: 6px;
+}
+.grit-section-title {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 72;
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  color: var(--abyss);
+  margin-bottom: 16px;
+}
+
+.grit-question {
+  margin-bottom: 14px;
+}
+.grit-q-text {
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  font-variation-settings: 'opsz' 60;
+  line-height: 1.25;
+  color: var(--abyss);
+  margin-bottom: 8px;
+  letter-spacing: -0.005em;
+}
+.grit-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.grit-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: var(--paper);
+  border: 1px solid var(--abyss-08);
+  border-radius: 5px;
+  font-family: var(--body);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--abyss-72);
+  line-height: 1.35;
+}
+.grit-option.selected {
+  background: var(--tide-pale);
+  border-color: var(--tide);
+  color: var(--abyss);
+  font-weight: 600;
+}
+.grit-radio {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--abyss-24);
+  background: transparent;
+  position: relative;
+}
+.grit-option.selected .grit-radio {
+  border-color: var(--tide);
+}
+.grit-option.selected .grit-radio::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--tide);
+  border-radius: 50%;
+}
+.grit-fade {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(180deg, transparent 0%, var(--foam) 100%);
+  pointer-events: none;
+}
+.grit-cta-wrap {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+}
+
+/* SCREEN 4 — Tuned */
+.tuned-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 22px 18px;
+}
+.tuned-eyebrow {
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 7px;
+}
+.tuned-title {
+  font-family: var(--display);
+  font-size: 23px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  color: var(--abyss);
+  margin-bottom: 13px;
+}
+.tuned-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: auto;
+}
+.tuned-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--abyss-08);
+}
+.tuned-row:last-child { border-bottom: none; }
+.tuned-row-label {
+  font-family: var(--body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+}
+.tuned-row-value {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--abyss);
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+}
+.tuned-row-value strong {
+  color: var(--coral);
+  font-weight: 700;
+}
+.tuned-row.first-session {
+  background: var(--tide-pale);
+  border: 1px solid var(--tide-soft);
+  border-radius: 6px;
+  padding: 8px 11px;
+  border-bottom: none;
+  margin-top: 2px;
+}
+.tuned-row.first-session .tuned-row-label { color: var(--tide-deep); }
+
+/* ANNOTATIONS ROW */
+.annotations-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding-top: 36px;
+}
+.annot-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.annot-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--abyss);
+  color: var(--foam);
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.annot-label {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+}
+.annot-title {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.annot-body {
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--abyss-72);
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+/* ES PARITY PANEL */
+.parity-panel {
+  padding: 48px 64px;
+  background: var(--abyss);
+  color: var(--foam);
+}
+.parity-panel .section-eyebrow { color: var(--tide-soft); }
+.parity-panel .section-title { color: var(--foam); margin-bottom: 32px; max-width: 720px; }
+
+.parity-display {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.parity-phone-pair {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  gap: 16px;
+}
+
+.mini-phone {
+  width: 200px;
+  height: 410px;
+  background: #0d0d0e;
+  border-radius: 28px;
+  padding: 7px;
+  position: relative;
+  box-shadow:
+    0 1px 0 1px rgba(255, 255, 255, 0.04),
+    0 16px 40px -8px rgba(0, 0, 0, 0.5);
+}
+.mini-phone::before {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 15px;
+  background: #0d0d0e;
+  border-radius: 100px;
+  z-index: 10;
+}
+.mini-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--foam);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.mini-lang-label {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-soft);
+}
+
+.parity-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 8px;
+}
+.parity-rule {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(236, 247, 248, 0.12);
+}
+.parity-rule:last-child { border-bottom: none; padding-bottom: 0; }
+.parity-num {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 72;
+  color: var(--tide-soft);
+  line-height: 1;
+  padding-top: 4px;
+}
+.parity-text {
+  font-family: var(--body);
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: rgba(236, 247, 248, 0.85);
+  letter-spacing: 0.005em;
+}
+.parity-text strong {
+  color: var(--foam);
+  font-weight: 700;
+}
+
+/* FOOTER */
+.card-footer {
+  padding: 40px 64px 56px;
+  background: var(--foam);
+}
+.takeaway {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.34;
+  color: var(--abyss);
+  letter-spacing: -0.012em;
+  padding-left: 24px;
+  border-left: 2px solid var(--coral);
+  margin-bottom: 18px;
+  max-width: 880px;
+}
+.takeaway .accent {
+  font-weight: 500;
+  background-image: linear-gradient(transparent 68%, rgba(255, 106, 61, 0.22) 68%, rgba(255, 106, 61, 0.22) 92%, transparent 92%);
+}
+.meta-row {
+  display: flex;
+  gap: 24px;
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  line-height: 1.55;
+  padding-top: 6px;
+}
+.meta-row .meta-label {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--abyss-72);
+  font-size: 10px;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<article class="onboarding-card">
+
+  <!-- HEADER -->
+  <header class="card-header">
+    <span class="eyebrow">Inclusive Onboarding · Atlan Performance</span>
+    <h1 class="card-title">First touch</h1>
+    <p class="card-subtitle">Language as a first-class choice, not a default. A four-question calibration that shapes the app to the user, not the other way around. Sage in the science, Hero in the greeting — once, briefly.</p>
+  </header>
+
+  <!-- CONTEXT PHOTO -->
+  <figure class="context-band">
+    <img src="../assets/photography/fig-onboarding-context.png" alt="A hand holding a phone at the pool deck at sunrise, with the Atlan welcome screen offering English and Español side-by-side" />
+    <figcaption class="context-caption">
+      <span class="context-tag">First touch · sunrise, pool deck</span>
+      <span class="context-body">The first decision is which language the product speaks to you. Not buried in settings. Not a flag-icon afterthought. Equal weight, equal voice.</span>
+    </figcaption>
+  </figure>
+
+  <!-- FOUR-SCREEN FLOW -->
+  <section class="flow-section">
+    <h2 class="section-eyebrow">Onboarding flow · English path</h2>
+    <h3 class="section-title">Four screens, two minutes, no defaults assumed.</h3>
+
+    <div class="flow-row">
+
+      <!-- SCREEN 1 — LANGUAGE -->
+      <div class="phone-column">
+        <div class="step-tag">
+          <span class="step-num">Step 01</span>
+          <span class="step-name">Language</span>
+        </div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status-bar">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="11" height="8" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+                <svg width="18" height="9" viewBox="0 0 22 11" fill="none">
+                  <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="#0B2A3C" opacity="0.6"/>
+                  <rect x="2" y="2" width="14" height="7" rx="1" fill="#0B2A3C"/>
+                </svg>
+              </span>
+            </div>
+            <div class="lang-screen">
+              <div class="back-slot-reserved" aria-hidden="true"></div>
+              <div class="brand-wordmark">atlan</div>
+              <div class="lang-question">Choose your language</div>
+              <div class="lang-question-es">Elige tu idioma</div>
+              <div class="lang-options">
+                <div class="lang-btn">English</div>
+                <div class="lang-btn">Español</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 2 — WELCOME -->
+      <div class="phone-column">
+        <div class="step-tag">
+          <span class="step-num">Step 02</span>
+          <span class="step-name">Welcome</span>
+        </div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status-bar">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="11" height="8" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+                <svg width="18" height="9" viewBox="0 0 22 11" fill="none">
+                  <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="#0B2A3C" opacity="0.6"/>
+                  <rect x="2" y="2" width="14" height="7" rx="1" fill="#0B2A3C"/>
+                </svg>
+              </span>
+            </div>
+            <div class="welcome-screen">
+              <div class="back-arrow"><svg viewBox="0 0 9 14" fill="none" aria-hidden="true"><path d="M7 1L2 7l5 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="welcome-eyebrow">Welcome</div>
+              <h2 class="welcome-title">Built for athletes with lives.</h2>
+              <p class="welcome-body">Atlan adapts the plan around your week — not the other way around. Before we start, a few short questions to <strong>tune the app to how you actually train.</strong></p>
+              <div class="cta-button">Begin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 3 — GRIT ASSESSMENT -->
+      <div class="phone-column">
+        <div class="step-tag">
+          <span class="step-num">Step 03</span>
+          <span class="step-name">Calibration</span>
+        </div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status-bar">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="11" height="8" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+                <svg width="18" height="9" viewBox="0 0 22 11" fill="none">
+                  <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="#0B2A3C" opacity="0.6"/>
+                  <rect x="2" y="2" width="14" height="7" rx="1" fill="#0B2A3C"/>
+                </svg>
+              </span>
+            </div>
+            <div class="grit-screen">
+              <div class="grit-top">
+                <span class="back-arrow-sm"><svg viewBox="0 0 9 14" fill="none" aria-hidden="true"><path d="M7 1L2 7l5 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span class="progress-pill">2 of 4</span>
+              </div>
+
+              <div class="grit-intro">A few short questions</div>
+              <h3 class="grit-section-title">No right answers. Just calibration.</h3>
+
+              <!-- Question 1 -->
+              <div class="grit-question">
+                <p class="grit-q-text">What pulls you to training most weeks?</p>
+                <div class="grit-options">
+                  <div class="grit-option selected">
+                    <span class="grit-radio"></span>
+                    <span>The space it gives me from work</span>
+                  </div>
+                  <div class="grit-option">
+                    <span class="grit-radio"></span>
+                    <span>The pursuit of getting better</span>
+                  </div>
+                  <div class="grit-option">
+                    <span class="grit-radio"></span>
+                    <span>The structure for my week</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="grit-question">
+                <p class="grit-q-text">When the plan meets life, what works?</p>
+                <div class="grit-options">
+                  <div class="grit-option">
+                    <span class="grit-radio"></span>
+                    <span>Flex the plan around the constraint</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grit-fade"></div>
+              <div class="grit-cta-wrap">
+                <div class="cta-button">Continue</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN 4 — TUNED -->
+      <div class="phone-column">
+        <div class="step-tag">
+          <span class="step-num">Step 04</span>
+          <span class="step-name">Ready</span>
+        </div>
+        <div class="phone">
+          <div class="screen">
+            <div class="status-bar">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="11" height="8" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+                <svg width="18" height="9" viewBox="0 0 22 11" fill="none">
+                  <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="#0B2A3C" opacity="0.6"/>
+                  <rect x="2" y="2" width="14" height="7" rx="1" fill="#0B2A3C"/>
+                </svg>
+              </span>
+            </div>
+            <div class="tuned-screen">
+              <div class="back-arrow" style="margin-bottom: 8px;"><svg viewBox="0 0 9 14" fill="none" aria-hidden="true"><path d="M7 1L2 7l5 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="tuned-eyebrow">Tuned to your week</div>
+              <h2 class="tuned-title">Here's how I'll work with you.</h2>
+
+              <div class="tuned-list">
+                <div class="tuned-row">
+                  <span class="tuned-row-label">Adaptive scheduling</span>
+                  <span class="tuned-row-value"><strong>On.</strong> I'll absorb disruption before it becomes a missed session.</span>
+                </div>
+                <div class="tuned-row">
+                  <span class="tuned-row-label">Depth on demand</span>
+                  <span class="tuned-row-value"><strong>On.</strong> The "why" lives one tap from the term, with sources.</span>
+                </div>
+                <div class="tuned-row">
+                  <span class="tuned-row-label">Notifications</span>
+                  <span class="tuned-row-value"><strong>Minimal.</strong> Mornings and Sunday evenings only.</span>
+                </div>
+                <div class="tuned-row first-session">
+                  <span class="tuned-row-label">First session · tomorrow</span>
+                  <span class="tuned-row-value">Pool · Threshold · 1,000m</span>
+                </div>
+              </div>
+
+              <div class="cta-button">See your first session</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ANNOTATIONS ROW -->
+    <div class="annotations-row">
+      <div class="annot-card">
+        <span class="annot-mark">1</span>
+        <span class="annot-label">No defaults</span>
+        <span class="annot-title">Language is a choice</span>
+        <p class="annot-body">English and Español are presented as equal options, in the same type weight, in the same button shape. Neither inherits "default" status from device locale.</p>
+      </div>
+      <div class="annot-card">
+        <span class="annot-mark">2</span>
+        <span class="annot-label">Voice ratio</span>
+        <span class="annot-title">55 % Hero · 45 % Sage</span>
+        <p class="annot-body">The only surface where Hero leads. "Welcome" eyebrow in Coral, warm title, autonomy-supportive framing. Hands off to Sage by the second sentence.</p>
+      </div>
+      <div class="annot-card">
+        <span class="annot-mark">3</span>
+        <span class="annot-label">Calibration, not scoring</span>
+        <span class="annot-title">No right answers</span>
+        <p class="annot-body">Four questions, three options each, no "good athlete / bad athlete" framing. Each answer tunes a real product setting — autonomy, depth density, notification cadence.</p>
+      </div>
+      <div class="annot-card">
+        <span class="annot-mark">4</span>
+        <span class="annot-label">Transparency</span>
+        <span class="annot-title">Inferred settings, shown</span>
+        <p class="annot-body">Step 04 surfaces what the app inferred from the user's answers. No hidden personalization. The user can see, and adjust, what the calibration did.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ES PARITY PANEL — dark -->
+  <section class="parity-panel">
+    <h2 class="section-eyebrow">Bilingual parity</h2>
+    <h3 class="section-title">Spanish is not a translation of English. It's the same product, built twice.</h3>
+
+    <div class="parity-display">
+
+      <!-- EN / ES welcome mini-phones -->
+      <div class="parity-phone-pair">
+
+        <div class="mini-phone">
+          <div class="mini-screen">
+            <div class="status-bar" style="font-size: 8px; padding: 11px 16px 0;">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="9" height="6" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+              </span>
+            </div>
+            <div class="welcome-screen" style="padding: 32px 18px 18px;">
+              <div class="back-arrow" style="margin-bottom: 24px; width: 20px; height: 20px;"><svg viewBox="0 0 9 14" fill="none" aria-hidden="true"><path d="M7 1L2 7l5 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="welcome-eyebrow" style="font-size: 8.5px; margin-bottom: 8px;">Welcome</div>
+              <h2 class="welcome-title" style="font-size: 22px; margin-bottom: 12px;">Built for athletes with lives.</h2>
+              <p class="welcome-body" style="font-size: 11px;">Atlan adapts the plan around your week — not the other way around. Before we start, a few short questions to tune the app to how you actually train.</p>
+              <div class="cta-button" style="padding: 11px; font-size: 10.5px; margin-top: 12px;">Begin</div>
+            </div>
+          </div>
+          <div class="mini-lang-label">English</div>
+        </div>
+
+        <div class="mini-phone">
+          <div class="mini-screen">
+            <div class="status-bar" style="font-size: 8px; padding: 11px 16px 0;">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="9" height="6" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+              </span>
+            </div>
+            <div class="welcome-screen" style="padding: 32px 18px 18px;">
+              <div class="back-arrow" style="margin-bottom: 24px; width: 20px; height: 20px;"><svg viewBox="0 0 9 14" fill="none" aria-hidden="true"><path d="M7 1L2 7l5 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="welcome-eyebrow" style="font-size: 8.5px; margin-bottom: 8px;">Bienvenida</div>
+              <h2 class="welcome-title" style="font-size: 22px; margin-bottom: 12px;">Hecho para quienes entrenan entre todo lo demás.</h2>
+              <p class="welcome-body" style="font-size: 11px;">Atlan adapta el plan a tu semana — no al revés. Antes de empezar, unas preguntas cortas para afinarla a tu manera de entrenar.</p>
+              <div class="cta-button" style="padding: 11px; font-size: 10.5px; margin-top: 12px;">Comenzar</div>
+            </div>
+          </div>
+          <div class="mini-lang-label">Español</div>
+        </div>
+
+      </div>
+
+      <!-- Parity Rules -->
+      <div></div>
+      <div class="parity-rules">
+        <div class="parity-rule">
+          <span class="parity-num">01</span>
+          <p class="parity-text"><strong>Voice posture, not vocabulary, is what carries.</strong> "Built for athletes with lives" doesn't translate literally as "Hecho para atletas con vidas." It translates as "Hecho para quienes entrenan entre todo lo demás" — the same Quiet Sage posture in Spanish-native phrasing.</p>
+        </div>
+        <div class="parity-rule">
+          <span class="parity-num">02</span>
+          <p class="parity-text"><strong>The Sage 70 / Hero 30 ratio holds in Spanish.</strong> Voice ratio is set by tone, not by literal word count. Spanish review is a separate audit pass with a native ES copy editor; not a translation memory output.</p>
+        </div>
+        <div class="parity-rule">
+          <span class="parity-num">03</span>
+          <p class="parity-text"><strong>Hierarchy and layout remain identical.</strong> No "Spanish takes more characters, so the button got smaller." Type tokens, button heights, and spacing are language-invariant. Long ES strings flow to two lines; they do not shrink.</p>
+        </div>
+        <div class="parity-rule">
+          <span class="parity-num">04</span>
+          <p class="parity-text"><strong>Calibration questions are written in Spanish first for Spanish users, not translated.</strong> The Grit Assessment in ES is authored by a Spanish-native copywriter using the same SDT framing. Same answers, same calibration, different mother tongue.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="card-footer">
+    <p class="takeaway">
+      Most products treat <span class="accent">Spanish as a translation layer</span>. Atlan treats it as a first language. Same product, built twice, with the same posture.
+    </p>
+    <div class="meta-row">
+      <span class="meta-label">Sources</span>
+      <span>Phase 1 brief (bilingual ES/EN posture as a strategic differentiator); Phase 2 Output 3 persona (bilingual respect — language is a choice, not a default); Output 4 voice spec (55/45 Sage/Hero for onboarding welcome, 70/30 for the Grit Assessment block). Spanish copy in the parity panel is original, not a translation of the English version.</span>
+      <span class="meta-label">Back navigation</span>
+      <span>Steps 02–04 carry a back control; step 01 reserves the slot and leaves it empty, so the progress marks do not shift on the one screen with nothing behind it. What a static figure cannot show: the control is <strong>clamped to the flow's entry point, not to step 01</strong> — Settings → “Re-run calibration” opens this same flow at Calibration, and back stops there rather than walking the athlete into Language or Welcome, which belong to first run only.</span>
+    </div>
+  </footer>
+
+</article>
+</div>
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<template id="__bundler_thumbnail" data-bg-color="#fbfaf8">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="38" r="18" fill="#0E8A9A"/><path d="M20 85 Q50 55 80 85" fill="#0E8A9A"/></svg>
+</template>
+<title>The Optimizer — Strategic Persona · Atlan Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --abyss: #0B2A3C;
+  --abyss-92: rgba(11, 42, 60, 0.92);
+  --abyss-72: rgba(11, 42, 60, 0.72);
+  --abyss-56: rgba(11, 42, 60, 0.56);
+  --abyss-40: rgba(11, 42, 60, 0.40);
+  --abyss-16: rgba(11, 42, 60, 0.16);
+  --abyss-08: rgba(11, 42, 60, 0.08);
+  --tide: #0E8A9A;
+  --tide-deep: #0A6F7D;
+  --coral: #FF6A3D;
+  --foam: #ECF7F8;
+  --foam-warm: #F4FAFB;
+  --paper: #FBFCFC;
+  --display: 'Fraunces', 'Georgia', serif;
+  --body: 'Manrope', 'Helvetica Neue', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--abyss);
+  font-family: var(--body);
+  color: var(--abyss);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Page backdrop — Abyss Navy with subtle atmosphere */
+.page {
+  min-height: 100vh;
+  padding: 64px 32px;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 20%, rgba(14, 138, 154, 0.08), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 80%, rgba(255, 106, 61, 0.04), transparent 55%),
+    var(--abyss);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Subtle grain overlay on the page background */
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* THE CARD */
+.persona-card {
+  width: 100%;
+  max-width: 1040px;
+  background: var(--foam);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 32px 80px -16px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Single hairline accent at top — Coral Spark, used exactly once */
+.persona-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 3px;
+  background: var(--coral);
+}
+
+/* HEADER STRIP */
+.card-header {
+  padding: 56px 64px 40px;
+  border-bottom: 1px solid var(--abyss-08);
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 28px;
+}
+
+.persona-label {
+  font-family: var(--display);
+  font-size: 76px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 144;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--abyss);
+  margin-bottom: 16px;
+}
+
+.anchor-line {
+  font-family: var(--body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--abyss-72);
+  letter-spacing: 0.01em;
+}
+
+.anchor-line .sep {
+  display: inline-block;
+  margin: 0 10px;
+  color: var(--abyss-40);
+}
+
+/* MAIN BODY GRID */
+.card-body {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 56px;
+  padding: 48px 64px 40px;
+}
+
+/* LEFT COLUMN */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* PORTRAIT PLACEHOLDER */
+.portrait {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg,
+      #d4e9ed 0%,
+      #b8d8df 40%,
+      #8cb8c4 65%,
+      #5a96a6 85%,
+      #2d6a7a 100%);
+}
+
+.portrait-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portrait-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    transparent 60%,
+    rgba(11, 42, 60, 0.65) 100%);
+}
+
+.portrait-brief-tag {
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 8px;
+}
+
+.portrait-brief-text {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.005em;
+}
+
+/* AT-A-GLANCE BLOCK */
+.glance-block h3 {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 18px;
+}
+
+.glance {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.glance-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--abyss-08);
+}
+
+.glance-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.glance-label {
+  font-family: var(--body);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+}
+
+.glance-value {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--abyss);
+}
+
+/* RIGHT COLUMN */
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* HEADLINE INSIGHT */
+.headline-insight {
+  position: relative;
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.32;
+  letter-spacing: -0.012em;
+  color: var(--abyss);
+  padding: 4px 0 0 24px;
+  border-left: 2px solid var(--coral);
+}
+
+.headline-insight .accent {
+  font-style: italic;
+  font-weight: 500;
+  background-image: linear-gradient(transparent 68%, rgba(255, 106, 61, 0.22) 68%, rgba(255, 106, 61, 0.22) 92%, transparent 92%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* TWO-COLUMN BLOCK: VALUES + FRICTIONS */
+.lists-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.list-block h3 {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--abyss-16);
+}
+
+.list-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list-block li {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--abyss);
+  padding-left: 18px;
+  position: relative;
+  letter-spacing: 0.005em;
+}
+
+.list-block li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 1.5px;
+  background: var(--tide);
+}
+
+.list-block.frictions li::before {
+  background: var(--abyss-40);
+}
+
+/* PULL QUOTE FOOTER */
+.card-footer {
+  padding: 0 64px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.pull-quote {
+  position: relative;
+  padding: 36px 40px;
+  background: var(--foam-warm);
+  border-radius: 2px;
+}
+
+.pull-quote::before {
+  content: '"';
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-family: var(--display);
+  font-size: 96px;
+  line-height: 1;
+  color: var(--tide);
+  opacity: 0.18;
+  font-weight: 500;
+}
+
+.pull-quote p {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.42;
+  color: var(--abyss);
+  letter-spacing: -0.005em;
+  position: relative;
+  z-index: 1;
+}
+
+.pull-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+}
+
+/* DISCLOSURE FOOTER */
+.disclosure {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--abyss-08);
+}
+
+.disclosure-mark {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--abyss-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 9px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--abyss-56);
+  margin-top: 2px;
+}
+
+.disclosure-text {
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--abyss-56);
+  letter-spacing: 0.005em;
+}
+
+.disclosure-text strong {
+  font-weight: 600;
+  color: var(--abyss-72);
+}
+
+/* META FOOTER outside card */
+.meta-footer {
+  margin-top: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.meta-footer .dot {
+  margin: 0 10px;
+  opacity: 0.5;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<article class="persona-card">
+
+  <header class="card-header">
+    <span class="eyebrow">Strategic Persona · Atlan Performance</span>
+    <h1 class="persona-label">The Optimizer</h1>
+    <p class="anchor-line">
+      Sofía<span class="sep">·</span>41<span class="sep">·</span>Chief of Staff<span class="sep">·</span>Heredia / San José commute
+    </p>
+  </header>
+
+  <div class="card-body">
+
+    <aside class="left-col">
+
+      <!-- PORTRAIT PHOTO -->
+      <div class="portrait" aria-label="The Optimizer — Sofía, post-swim portrait at sunrise pool deck">
+        <img class="portrait-scene" src="../assets/photography/fig-optimizer-portrait.png" alt="Sofía, 41, post-swim portrait at sunrise pool deck" style="object-fit: cover;" />
+        <div class="portrait-overlay">
+          <div class="portrait-brief-tag">The Optimizer · Sofía · 41</div>
+          <div class="portrait-brief-text">
+            Post-swim, pool deck, sunrise. Calm focus — not exertion. The persona is a real shape of person, not a stock-fitness archetype.
+          </div>
+        </div>
+      </div>
+
+      <!-- AT-A-GLANCE -->
+      <div class="glance-block">
+        <h3>At a glance</h3>
+        <dl class="glance">
+          <div class="glance-row">
+            <dt class="glance-label">Age</dt>
+            <dd class="glance-value">30–50 range</dd>
+          </div>
+          <div class="glance-row">
+            <dt class="glance-label">Career</dt>
+            <dd class="glance-value">Mid-to-senior professional, high meeting density</dd>
+          </div>
+          <div class="glance-row">
+            <dt class="glance-label">Sport</dt>
+            <dd class="glance-value">Triathlon / open-water swim, 8–12 hrs / week</dd>
+          </div>
+          <div class="glance-row">
+            <dt class="glance-label">Years in</dt>
+            <dd class="glance-value">3–10 years, past beginner phase</dd>
+          </div>
+          <div class="glance-row">
+            <dt class="glance-label">Language</dt>
+            <dd class="glance-value">Bilingual ES / EN, no consistent default</dd>
+          </div>
+          <div class="glance-row">
+            <dt class="glance-label">Tech</dt>
+            <dd class="glance-value">Fluent. Has tried TrainingPeaks + a swim app</dd>
+          </div>
+        </dl>
+      </div>
+
+    </aside>
+
+    <main class="right-col">
+
+      <!-- HEADLINE INSIGHT -->
+      <blockquote class="headline-insight">
+        Not deficient on drive or discipline. Deficient on <span class="accent">alignment</span> between the two — and the dominant cost driving that misalignment is <span class="accent">cognitive, not physical, fatigue</span>.
+      </blockquote>
+
+      <!-- TWO-COLUMN LISTS -->
+      <div class="lists-row">
+
+        <div class="list-block values">
+          <h3>What they value</h3>
+          <ul>
+            <li>Scientific rigor — real biomechanical "why," cited</li>
+            <li>Time efficiency — minimum effective dose</li>
+            <li>Adaptability to real life over rigid scheduling</li>
+            <li>Sustainable consistency over intensity peaks</li>
+            <li>Bilingual respect — language is a choice, not a default</li>
+            <li>Calm aesthetic — focused, not aggressive</li>
+          </ul>
+        </div>
+
+        <div class="list-block frictions">
+          <h3>What breaks them</h3>
+          <ul>
+            <li>Soft shaming, fail-state copy, streak alerts</li>
+            <li>Cluttered, decision-heavy dashboards</li>
+            <li>Borrowed gamification: badges, confetti, leaderboards</li>
+            <li>Rigid scheduling that treats disruption as failure</li>
+            <li>Apps that don't work poolside — wet hands, sun glare</li>
+            <li>Motivational pushes, generic English-default UI</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <!-- PULL QUOTE + DISCLOSURE -->
+  <footer class="card-footer">
+    <div class="pull-quote">
+      <p>
+        I don't need more motivation. I need less guilt when life intervenes.
+      </p>
+      <cite>Synthesized voice pattern</cite>
+    </div>
+
+    <div class="disclosure">
+      <span class="disclosure-mark">i</span>
+      <p class="disclosure-text">
+        <strong>Synthesis persona.</strong> Built from secondary research (Self-Determination Theory, exercise-adherence literature, app-store and forum review patterns) and informal conversations with athletes in the designer's network. Not from formal moderated user interviews. The anchor name is a vividness device, not a real individual.
+      </p>
+    </div>
+  </footer>
+
+</article>
+</div>
+</body>
+</html>

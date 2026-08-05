@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where the gap sits — Competitive 2×2 · Atlan Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --abyss: #0B2A3C;
+  --abyss-deep: #061a26;
+  --abyss-92: rgba(11, 42, 60, 0.92);
+  --abyss-72: rgba(11, 42, 60, 0.72);
+  --abyss-56: rgba(11, 42, 60, 0.56);
+  --abyss-40: rgba(11, 42, 60, 0.40);
+  --abyss-24: rgba(11, 42, 60, 0.24);
+  --abyss-16: rgba(11, 42, 60, 0.16);
+  --abyss-08: rgba(11, 42, 60, 0.08);
+  --abyss-04: rgba(11, 42, 60, 0.04);
+  --tide: #0E8A9A;
+  --tide-deep: #0A6F7D;
+  --tide-soft: #BFE0E5;
+  --tide-pale: #DDEEF1;
+  --coral: #FF6A3D;
+  --coral-bright: #FF7E50;
+  --foam: #ECF7F8;
+  --foam-warm: #F4FAFB;
+  --paper: #FBFCFC;
+  --display: 'Fraunces', 'Georgia', serif;
+  --body: 'Manrope', 'Helvetica Neue', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--abyss);
+  font-family: var(--body);
+  color: var(--abyss);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 64px 32px;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 20%, rgba(14, 138, 154, 0.08), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 80%, rgba(255, 106, 61, 0.04), transparent 55%),
+    var(--abyss);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.matrix-card {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--foam);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 32px 80px -16px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.matrix-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 3px;
+  background: var(--coral);
+  z-index: 5;
+}
+
+/* ====================== */
+/* HEADER */
+/* ====================== */
+.card-header {
+  padding: 56px 64px 32px;
+}
+.eyebrow {
+  display: block;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 24px;
+}
+.card-title {
+  font-family: var(--display);
+  font-size: 64px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 144;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--abyss);
+  margin-bottom: 14px;
+}
+.card-subtitle {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  color: var(--abyss-72);
+  line-height: 1.45;
+  max-width: 760px;
+}
+
+/* ====================== */
+/* MATRIX SECTION */
+/* ====================== */
+.matrix-section {
+  padding: 32px 64px 48px;
+  border-top: 1px solid var(--abyss-08);
+}
+.section-eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--abyss);
+  margin-bottom: 36px;
+  max-width: 720px;
+}
+
+/* ====================== */
+/* MATRIX FRAME */
+/* ====================== */
+.matrix-wrap {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+.y-axis-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0 60px;
+}
+.y-axis-rail .y-label {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin-bottom: 8px;
+}
+.y-axis-rail .y-range {
+  font-family: var(--display);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--abyss-56);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.y-axis-rail .y-range strong {
+  font-weight: 500;
+  color: var(--abyss-72);
+}
+
+.matrix-and-x {
+  display: flex;
+  flex-direction: column;
+}
+
+.matrix-frame {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: var(--paper);
+  border: 1px solid var(--abyss-08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Quadrant fills */
+.quadrant {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+.quadrant.upper-left {
+  top: 0;
+  left: 0;
+  background: rgba(14, 138, 154, 0.05);
+}
+.quadrant.upper-right {
+  top: 0;
+  right: 0;
+  background: rgba(14, 138, 154, 0.03);
+}
+.quadrant.lower-left {
+  bottom: 0;
+  left: 0;
+  background: rgba(14, 138, 154, 0.05);
+}
+.quadrant.lower-right {
+  bottom: 0;
+  right: 0;
+  background: rgba(14, 138, 154, 0.04);
+}
+
+/* Crosshair axes */
+.axis-h, .axis-v {
+  position: absolute;
+  background: var(--abyss-24);
+  pointer-events: none;
+}
+.axis-h {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-0.5px);
+}
+.axis-v {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-0.5px);
+}
+.axis-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.axis-arrow.up {
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 7px solid var(--abyss-40);
+}
+.axis-arrow.right {
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--abyss-40);
+}
+
+/* Quadrant corner labels */
+.quad-label {
+  position: absolute;
+  font-family: var(--body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--abyss-40);
+  white-space: nowrap;
+}
+.quad-label.tl { top: 16px; left: 16px; }
+.quad-label.tr { top: 16px; right: 16px; }
+.quad-label.bl { bottom: 16px; left: 16px; }
+.quad-label.br { bottom: 16px; right: 16px; }
+
+/* ====================== */
+/* COMPETITOR DOTS */
+/* ====================== */
+.dot {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 3;
+}
+.dot-glyph {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--tide);
+  flex-shrink: 0;
+}
+.dot-glyph::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: rgba(14, 138, 154, 0.16);
+  z-index: -1;
+}
+.dot-label-block {
+  margin-top: 8px;
+  max-width: 200px;
+}
+.dot-label {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--abyss);
+  letter-spacing: -0.002em;
+  line-height: 1.15;
+}
+.dot-label sup {
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--tide-deep);
+  vertical-align: super;
+  margin-left: 2px;
+}
+.dot-charac {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--abyss-72);
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+/* Specific dot positions — calibrated for 520px-tall matrix frame */
+/* The matrix has 1px crosshairs at y=260 (h-axis) and x=50% (v-axis) */
+/* Y-axis: Pressure (bottom) ←→ Autonomy-supportive (top); Pressure-based competitors plot ABOVE midline only if Deep on X */
+/* Reading: TrainingPeaks = Deep + Pressure = upper-left quadrant */
+
+.dot-trainingpeaks {
+  /* upper-left quadrant, ~25% from top, ~16% from left */
+  top: 70px;
+  left: 60px;
+}
+.dot-strava {
+  /* lower-left quadrant (Shallow + Pressure), deep into the corner */
+  /* "Pressure-based" is BOTTOM of Y-axis, so Strava plots LOW */
+  top: 360px;
+  left: 56px;
+}
+.dot-myswimpro {
+  /* "Middle-left: Medium science, Pressure-leaning" */
+  /* Sits just-left-of-center on X (Medium), just-below-center on Y (Pressure-leaning, not full pressure) */
+  top: 296px;
+  left: 360px;
+}
+.dot-myswimpro .dot-label-block { max-width: 180px; }
+.dot-form {
+  /* "Upper-middle: Deep at-set + Neutral on adherence" */
+  /* On the Y-midline (Neutral), Deep on X (right of vertical axis) */
+  top: 248px;
+  left: 480px;
+}
+.dot-form .dot-glyph { background: var(--tide); }
+.dot-form .dot-label-block { max-width: 180px; }
+
+/* ====================== */
+/* ATLAN DOT — Coral, upper-right */
+/* ====================== */
+.dot-atlan {
+  position: absolute;
+  top: 64px;
+  right: 56px;
+  z-index: 4;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.atlan-glyph {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow:
+    0 0 0 6px rgba(255, 106, 61, 0.18),
+    0 0 22px 4px rgba(255, 106, 61, 0.30);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.atlan-glyph::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(255, 126, 80, 0.24);
+  z-index: -1;
+}
+
+.atlan-callout {
+  background: var(--foam-warm);
+  border-left: 2px solid var(--coral);
+  padding: 12px 16px 14px;
+  border-radius: 0 6px 6px 0;
+  max-width: 260px;
+  box-shadow: 0 1px 2px rgba(11, 42, 60, 0.04);
+}
+.atlan-callout-label {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--abyss);
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.atlan-callout-body {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--abyss);
+  line-height: 1.45;
+  margin-bottom: 2px;
+}
+.atlan-callout-italic {
+  font-family: var(--display);
+  font-size: 12.5px;
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss-72);
+  line-height: 1.4;
+}
+.atlan-tags {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.atlan-tag {
+  font-family: var(--body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.atlan-tag::before {
+  content: '→';
+  color: var(--coral);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+/* ====================== */
+/* FORM FOOTNOTE — below matrix, above axis definitions */
+/* ====================== */
+.matrix-footnote {
+  font-family: var(--body);
+  font-size: 10.5px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--abyss-56);
+  line-height: 1.55;
+  padding: 14px 0 0 0;
+}
+.matrix-footnote strong {
+  font-weight: 700;
+  color: var(--abyss-72);
+  font-style: normal;
+  margin-right: 3px;
+}
+
+/* ====================== */
+/* X-AXIS RAIL (below matrix) */
+/* ====================== */
+.x-axis-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+}
+.x-axis-rail .x-label {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 4px;
+}
+.x-axis-rail .x-range {
+  font-family: var(--display);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--abyss-56);
+}
+.x-axis-rail .x-range strong {
+  font-weight: 500;
+  color: var(--abyss-72);
+}
+
+/* Axis definitions row (below the matrix + axis rail) */
+.axis-defs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--abyss-08);
+  margin-top: 24px;
+}
+.axis-def {
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  line-height: 1.55;
+}
+.axis-def-label {
+  display: block;
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 6px;
+}
+
+/* ====================== */
+/* OUT-OF-SCOPE STRIP */
+/* ====================== */
+.out-of-scope {
+  padding: 28px 64px 32px;
+  background: var(--foam-warm);
+  border-top: 1px solid var(--abyss-08);
+  border-bottom: 1px solid var(--abyss-08);
+}
+.oos-header {
+  margin-bottom: 18px;
+}
+.oos-eyebrow {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+}
+.oos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+}
+.oos-col {
+  padding: 0 28px;
+  border-right: 1px solid var(--abyss-08);
+}
+.oos-col:first-child { padding-left: 0; }
+.oos-col:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+.oos-name {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--abyss);
+  margin-bottom: 6px;
+  letter-spacing: -0.005em;
+}
+.oos-reason {
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--abyss-72);
+  line-height: 1.5;
+}
+
+/* ====================== */
+/* METHODOLOGY PANEL (dark) */
+/* ====================== */
+.method-panel {
+  padding: 44px 64px 40px;
+  background: var(--abyss);
+  color: var(--foam);
+}
+.method-eyebrow {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-soft);
+  margin-bottom: 12px;
+}
+.method-title {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  color: var(--foam);
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+  margin-bottom: 28px;
+  max-width: 720px;
+  font-style: italic;
+}
+.method-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 36px;
+  margin-bottom: 28px;
+}
+.method-row {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: flex-start;
+}
+.method-bullet {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.55;
+  padding-top: 1px;
+}
+.method-body-name {
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--foam);
+  margin-bottom: 3px;
+  letter-spacing: -0.002em;
+}
+.method-body-text {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(236, 247, 248, 0.6);
+  line-height: 1.5;
+}
+.method-close {
+  font-family: var(--body);
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(236, 247, 248, 0.6);
+  line-height: 1.5;
+  padding-top: 22px;
+  border-top: 1px solid rgba(236, 247, 248, 0.12);
+  max-width: 880px;
+}
+
+/* ====================== */
+/* FOOTER */
+/* ====================== */
+.card-footer {
+  padding: 40px 64px 56px;
+  background: var(--foam);
+}
+.takeaway {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.34;
+  color: var(--abyss);
+  letter-spacing: -0.012em;
+  padding-left: 24px;
+  border-left: 2px solid var(--coral);
+  margin-bottom: 22px;
+  max-width: 880px;
+}
+.takeaway .accent {
+  font-weight: 500;
+  background-image: linear-gradient(transparent 68%, rgba(255, 106, 61, 0.22) 68%, rgba(255, 106, 61, 0.22) 92%, transparent 92%);
+}
+.meta-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px 24px;
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--abyss-72);
+  line-height: 1.55;
+  padding-top: 8px;
+  max-width: 880px;
+}
+.meta-row .meta-label {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--abyss-72);
+  font-size: 10px;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+/* ====================== */
+/* RESPONSIVE */
+/* ====================== */
+@media (max-width: 900px) {
+  .page { padding: 32px 16px; }
+  .card-header, .matrix-section, .out-of-scope, .method-panel, .card-footer {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .card-title { font-size: 44px; }
+  .matrix-frame { height: 440px; }
+  .dot-label-block { max-width: 140px; }
+  .oos-grid { grid-template-columns: 1fr; gap: 16px; }
+  .oos-col { padding: 16px 0; border-right: none; border-bottom: 1px solid var(--abyss-08); }
+  .oos-col:last-child { border-bottom: none; }
+  .method-grid { grid-template-columns: 1fr; }
+  .takeaway { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+<article class="matrix-card">
+
+  <!-- ============ HEADER ============ -->
+  <header class="card-header">
+    <span class="eyebrow">Phase 2 · Output 1 · Fig. 01</span>
+    <h1 class="card-title">Where the gap sits.</h1>
+    <p class="card-subtitle">A category polarized between depth without empathy and empathy without depth. The empty quadrant is the strategic frame for everything that follows.</p>
+  </header>
+
+  <!-- ============ MATRIX SECTION ============ -->
+  <section class="matrix-section">
+    <div class="section-eyebrow">The two axes · Four competitors · One empty quadrant</div>
+    <h2 class="section-title">The Optimizer falls in the gap between TrainingPeaks and Strava.</h2>
+
+    <div class="matrix-wrap">
+
+      <!-- Y-axis rail -->
+      <div class="y-axis-rail">
+        <span class="y-label">Adherence model</span>
+        <span class="y-range"><strong>Pressure-based</strong> ←→ <strong>Autonomy-supportive</strong></span>
+      </div>
+
+      <!-- Matrix + x-axis -->
+      <div class="matrix-and-x">
+
+        <div class="matrix-frame">
+
+          <!-- Quadrant fills -->
+          <div class="quadrant upper-left"></div>
+          <div class="quadrant upper-right"></div>
+          <div class="quadrant lower-left"></div>
+          <div class="quadrant lower-right"></div>
+
+          <!-- Axes -->
+          <div class="axis-h"></div>
+          <div class="axis-v"></div>
+          <div class="axis-arrow up"></div>
+          <div class="axis-arrow right"></div>
+
+          <!-- Quadrant corner labels -->
+          <span class="quad-label tl">Deep · Pressure</span>
+          <span class="quad-label tr">Deep · Autonomy-supportive</span>
+          <span class="quad-label bl">Shallow · Pressure</span>
+          <span class="quad-label br">Shallow · Autonomy-supportive</span>
+
+          <!-- Competitor dots -->
+          <div class="dot dot-trainingpeaks">
+            <div class="dot-glyph"></div>
+            <div class="dot-label-block">
+              <div class="dot-label">TrainingPeaks</div>
+              <div class="dot-charac">Periodization depth, calendar-as-authority</div>
+            </div>
+          </div>
+
+          <div class="dot dot-strava">
+            <div class="dot-glyph"></div>
+            <div class="dot-label-block">
+              <div class="dot-label">Strava</div>
+              <div class="dot-charac">Social-tracking layer, leaderboard-driven</div>
+            </div>
+          </div>
+
+          <div class="dot dot-myswimpro">
+            <div class="dot-glyph"></div>
+            <div class="dot-label-block">
+              <div class="dot-label">MySwimPro</div>
+              <div class="dot-charac">Swim-specific structure, streak-aware</div>
+            </div>
+          </div>
+
+          <div class="dot dot-form">
+            <div class="dot-glyph"></div>
+            <div class="dot-label-block">
+              <div class="dot-label">FORM<sup>1</sup></div>
+              <div class="dot-charac">Hardware HUD, in-set feedback only</div>
+            </div>
+          </div>
+
+          <!-- Atlan dot -->
+          <div class="dot-atlan">
+            <div class="atlan-glyph"></div>
+            <div class="atlan-callout">
+              <div class="atlan-callout-label">Atlan</div>
+              <div class="atlan-callout-body">Deep science + autonomy-supportive adherence.</div>
+              <div class="atlan-callout-italic">The empty quadrant the case study has to earn.</div>
+              <div class="atlan-tags">
+                <span class="atlan-tag">Depth · Task 4 (Why)</span>
+                <span class="atlan-tag">Autonomy · Tasks 2, 3 (Swapper, Wet Mode)</span>
+                <span class="atlan-tag">Coexistence · Task 6 (Before/After)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- X-axis rail -->
+        <div class="x-axis-rail">
+          <span class="x-label">Scientific depth</span>
+          <span class="x-range"><strong>Shallow</strong> ←→ <strong>Deep</strong></span>
+        </div>
+
+        <!-- FORM footnote (sits below matrix, above axis definitions) -->
+        <div class="matrix-footnote">
+          <strong>1.</strong>FORM is plotted on the Y-axis midline because the adherence question doesn't apply — it's hardware with a paired in-set app, not a coaching platform. Output 1 locked this position as <em>"Neutral on adherence."</em>
+        </div>
+
+        <!-- Axis definitions (Output 1 locked) -->
+        <div class="axis-defs">
+          <div class="axis-def">
+            <span class="axis-def-label">X — Scientific depth</span>
+            How much of the platform's interface is built around explaining the physiological or biomechanical <em>why</em>, vs. just showing the workout or the result.
+          </div>
+          <div class="axis-def">
+            <span class="axis-def-label">Y — Adherence model</span>
+            How the platform responds when life disrupts the plan — by enforcing the calendar, or by adapting around the user without breaking the training stimulus.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============ OUT-OF-SCOPE STRIP ============ -->
+  <section class="out-of-scope">
+    <div class="oos-header">
+      <span class="oos-eyebrow">Out of scope by decision · not by omission</span>
+    </div>
+    <div class="oos-grid">
+      <div class="oos-col">
+        <div class="oos-name">Garmin Connect</div>
+        <div class="oos-reason">Device-tier infrastructure, not a coaching platform — feeds into all four competitors above.</div>
+      </div>
+      <div class="oos-col">
+        <div class="oos-name">TriDot</div>
+        <div class="oos-reason">AI-coaching positioning is a separate strategic question; closest in coaching philosophy but pulls a different brand frame.</div>
+      </div>
+      <div class="oos-col">
+        <div class="oos-name">Whoop</div>
+        <div class="oos-reason">Recovery-first product, different category — adjacent but doesn't compete on prescription delivery.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHODOLOGY PANEL ============ -->
+  <section class="method-panel">
+    <div class="method-eyebrow">What this 2×2 deliberately does not measure</div>
+    <h3 class="method-title">Five omissions, named on purpose.</h3>
+
+    <div class="method-grid">
+      <div class="method-row">
+        <div class="method-bullet">▸</div>
+        <div>
+          <div class="method-body-name">Brand and design polish</div>
+          <div class="method-body-text">A high-quality interface can partly compensate for a weak adherence model. The 2×2 holds polish constant, which is a simplification.</div>
+        </div>
+      </div>
+      <div class="method-row">
+        <div class="method-bullet">▸</div>
+        <div>
+          <div class="method-body-name">Coach-marketplace dynamics</div>
+          <div class="method-body-text">TrainingPeaks' real moat is the network of coaches selling plans on the platform. Atlan does not compete there in v1.</div>
+        </div>
+      </div>
+      <div class="method-row">
+        <div class="method-bullet">▸</div>
+        <div>
+          <div class="method-body-name">Hardware integration</div>
+          <div class="method-body-text">Wearables (Garmin, Apple Watch, Whoop) feed into all four competitors. The 2×2 treats hardware as upstream infrastructure rather than as a competitive axis.</div>
+        </div>
+      </div>
+      <div class="method-row">
+        <div class="method-bullet">▸</div>
+        <div>
+          <div class="method-body-name">Geographic and language coverage</div>
+          <div class="method-body-text">Atlan's bilingual ES/EN posture is a differentiator the 2×2 doesn't render. It lives in Output 3 and Output 4.</div>
+        </div>
+      </div>
+      <div class="method-row">
+        <div class="method-bullet">▸</div>
+        <div>
+          <div class="method-body-name">Pricing tiers</div>
+          <div class="method-body-text">All four competitors have tier structures; price-tier comparisons live in a separate document at Phase 5 if needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="method-close">These omissions are not weaknesses of the framing — they are scope decisions. The 2×2 is intentionally narrow so it can do one job well.</p>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="card-footer">
+    <p class="takeaway">
+      The upper-right is empty. The case study has to earn it — and the receipts are in <span class="accent">Tasks 2, 3, 4, and 6</span>.
+    </p>
+    <div class="meta-row">
+      <span class="meta-label">Source</span>
+      <span>Phase 2 Output 1 (Competitive 2×2). Every axis, position, omission, and out-of-scope reason verbatim from the locked output.</span>
+      <span class="meta-label">Figure</span>
+      <span>FIG. 01 in the case study landing — Section 2 (Problem &amp; Context).</span>
+    </div>
+  </footer>
+
+</article>
+</div>
+</body>
+</html>

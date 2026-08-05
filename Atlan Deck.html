@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlan Performance — Portfolio Review Deck · Edgar Bonilla, May 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="deck/deck.css" />
+
+  <script src="deck-stage.js"></script>
+
+  <script type="application/json" id="speaker-notes">
+[
+  "Atlan Performance — Liquid Precision and The Quiet Sage. A self-initiated UX concept project. I'm Edgar Bonilla; this is May 2026. Two things to surface immediately: this is concept work, and the PWA is functional but not launched to users.",
+  "The one-line claim. An emotionally intelligent, offline-first, bilingual coaching PWA for executive endurance athletes thirty to fifty, built end-to-end solo over about ten weeks. Self-initiated. The seven-section structure is laid out in the appendix at the back.",
+  "My role. Owned: strategy, brand system, IA, all wireframes and hi-fi UI, the Wet Mode interaction model, the Session Swapper flow, bilingual onboarding, and the PWA implementation in code. Worked across: adherence-science synthesis, competitive teardown, technical scoping. What I gave up: a real user research panel. This is concept work; research is secondary literature plus light primary conversations. Every decision is one I made and can defend.",
+  "The problem, first take. Two existing positions. Deep-science platforms — TrainingPeaks — have the rigor and lack the empathy. Social-tracking platforms — Strava — have the warmth and lack the depth. The Optimizer needs both sides; neither product is built for them.",
+  "The problem, second take. The 2×2: scientific depth on one axis, adherence model on the other. Four competitors anchor the existing positions. The upper-right — Deep and Autonomy-supportive — is empty. That's where Atlan sits. The case study has to earn it.",
+  "The user — disclosure first. Before introducing the persona, I want to be explicit about methodology. The Optimizer is a synthesis built from secondary research and informal conversations. Not from a recruited research panel. Presented as synthesis, not ethnography. No quote in this case study is attributed to an individual.",
+  "The Optimizer. Executive athlete thirty to fifty, eight to twelve hours per week, three to ten years in sport, bilingual ES-EN. High tech literacy. Values rigor, time efficiency, adaptability. Broken by shame copy, cluttered dashboards, gamification, rigid scheduling, apps that don't work poolside.",
+  "The headline insight. Cognitive fatigue, not physical fatigue, is what breaks adherence. The Optimizer is not deficient on drive or discipline — they are deficient on alignment between the two. This insight does most of the design work that follows.",
+  "The reframe that did the work. Life-interruption is the default state for this user, not the exception. The product's job is to absorb disruption silently, not to mark it red. Every IA decision in the product descends from that sentence.",
+  "The journey. Dual-track comparison: a competitor product framing the missed session as a fail-state, versus Atlan's Session Swapper absorbing it silently. The competitor track deliberately reproduces banned voice patterns — 'Streak broken', 'You're 1 day behind plan' — as the language Atlan is designed against. That contrast is the artifact's core argument.",
+  "The Session Swapper. Three properties: notification-reachable — the disruption arrives where the user already is. One-gesture commit — swipe to accept the alternative, or tap skip. Neither is a fail-state. Silent recalculation — the week rebalances without exposing the math. Depth on demand, depth not on display.",
+  "Subtraction as a design move. The before-after dashboard: twenty-one elements down to six. Five charts down to one. Four pressure mechanics down to zero. Zero 'Why' affordances up to four. The dashboard was not redesigned to be simpler — it was redesigned around one question: what does the user need to decide in the next ten seconds?",
+  "Pillar one — Wet Mode. The Optimizer trains at the pool. Standard mobile UX assumes dry fingers and connectivity; neither holds. Wet Mode replaces precision taps with gross-motor swipe zones. Four spec floors: 320 by 360 pixel touch zone, 16-to-1 contrast, 144 pixel headline, 100 percent offline persistence. Sage 90 / Hero 10 — the only Coral element on the entire surface is the Complete swipe zone.",
+  "Pillar two — the Why button. Depth lives one tap below the surface, not on it. The 'i' button is Tide-outlined, a Sage affordance — never Coral. Coral is reserved for productive gestures. The threshold modal carries about 115 words across four parts: mechanism, bulleted detail, prescription, and a verifiable Maglischo 2003 citation. Sage 95 / Hero 5 — the strongest Sage surface in the product.",
+  "Pillar three — bilingual onboarding. Language selected before account creation. Both languages at equal visual weight, no IP geolocation auto-pick. Welcome lines: 'Built for athletes with lives.' / 'Hecho para quienes entrenan entre todo lo demás.' Different structures, same emotional payload. Sage 55 / Hero 45 — the only surface where Hero leads, briefly, because the first warmth signal a new user receives has to be Hero.",
+  "Measured outcomes. WCAG 2.2 AA across primary surfaces; AAA on the high-stakes screen. Abyss on Foam: 11.8 to 1. Foam on Abyss-deep in Wet Mode: 16 to 1. Secondary surfaces: 5.2 to 1. These are verified against design tokens. This is the only tile that gets a measured badge.",
+  "Hypothesis one. A 90-day cohort using Atlan would show at least 15 percent higher session-completion adherence than a TrainingPeaks-style control. Effect size grounded in Teixeira 2012 SDT meta-review. Measurement plan: between-subjects cohort, thirty to fifty per arm, pre-registered, alpha 0.05, power 0.80. Falsification: if the 95 percent confidence interval crosses zero, hypothesis rejected.",
+  "Hypothesis two. Users with wet hands inside a waterproof pouch complete 'mark set complete' in Wet Mode at least 40 percent faster than a standard mobile interface, with lower error rate. Measurement plan: within-subjects counterbalanced, twelve to eighteen participants, real pool deck, wet hands, sun glare. Primary metric: time to completion across five sets. Falsification: if mean delta is under 40 percent or error rates equalize, rejected.",
+  "Validation roadmap. Five stages sequenced by empirical cost. Closed beta with five to eight participants. Wet Mode in-environment study. The 90-day adherence cohort. Bilingual cohort sub-analysis. Subject matter expert audit of every Why citation. Stage five not stage one because the citations need to ship before they can be audited.",
+  "What I'd do differently. Recruit participants before locking the persona. Run the Wet Mode time-to-action study during, not after, the design. Get a Spanish-native copywriter on the Welcome copy before the artifact shipped. Spend time on a summary form of the case study, not just the full form.",
+  "Honesty and disclosure. Self-initiated concept. PWA functional, not launched. Persona is synthesis, not ethnography. AI tools — Cursor, Claude Code, Codex — accelerated implementation. Strategy, IA, voice rules, the reframe, the three pillars, the measurement plans — those are mine. AI accelerated implementation; AI did not author design strategy.",
+  "The case study reads as confidently honest, or it doesn't read at all. The next step is a recruited cohort. The next step after that is the data. Thank you. I'm at erbonilla at outlook dot com."
+]
+  </script>
+
+</head>
+<body>
+
+<deck-stage>
+
+  <!-- ─── SLIDE 01 — Cover ──────────────────────────────────── -->
+  <section class="bg-deep" data-screen-label="01 Cover">
+    <svg class="bg-morning" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="cv-water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1B5C6C"/>
+          <stop offset="40%" stop-color="#0E8A9A"/>
+          <stop offset="100%" stop-color="#061a26"/>
+        </linearGradient>
+        <radialGradient id="cv-sun" cx="0.18" cy="0.12" r="0.6">
+          <stop offset="0%" stop-color="#FF6A3D" stop-opacity="0.55"/>
+          <stop offset="40%" stop-color="#FF7E50" stop-opacity="0.16"/>
+          <stop offset="100%" stop-color="#FF6A3D" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="cv-ray" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFC9A8" stop-opacity="0.45"/>
+          <stop offset="100%" stop-color="#FFC9A8" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect width="1920" height="1080" fill="url(#cv-water)"/>
+      <rect width="1920" height="1080" fill="url(#cv-sun)"/>
+      <polygon points="280,0 360,0 480,1080 240,1080" fill="url(#cv-ray)" opacity="0.7"/>
+      <polygon points="540,0 620,0 760,1080 500,1080" fill="url(#cv-ray)" opacity="0.55"/>
+      <polygon points="820,0 900,0 1080,1080 800,1080" fill="url(#cv-ray)" opacity="0.40"/>
+      <g opacity="0.35">
+        <line x1="40" y1="420" x2="1880" y2="420" stroke="#ECF7F8" stroke-width="0.7"/>
+        <line x1="40" y1="580" x2="1880" y2="580" stroke="#ECF7F8" stroke-width="0.6"/>
+        <line x1="40" y1="740" x2="1880" y2="740" stroke="#ECF7F8" stroke-width="0.5"/>
+        <line x1="40" y1="900" x2="1880" y2="900" stroke="#ECF7F8" stroke-width="0.4"/>
+      </g>
+      <!-- coral lane floats -->
+      <g>
+        <circle cx="320" cy="580" r="6" fill="#FF6A3D"/>
+        <circle cx="780" cy="740" r="6" fill="#FF6A3D"/>
+        <circle cx="1280" cy="420" r="5" fill="#FF6A3D"/>
+        <circle cx="1640" cy="900" r="6" fill="#FF6A3D"/>
+      </g>
+    </svg>
+    <div class="veil"></div>
+
+    <div class="slide-chrome fg">
+      <div class="left">
+        <span class="logo">atlan<span class="dot">.</span></span>
+        <span class="sep"></span>
+        <span>UX CASE STUDY · 2026</span>
+      </div>
+      <div>01 / 22</div>
+    </div>
+
+    <div class="fg" style="position:absolute; left:96px; right:96px; bottom:96px; display:flex; flex-direction:column; gap:48px;">
+      <div style="display:flex; align-items:center; gap:28px;">
+        <img src="assets/atlan_logo_bk.svg" alt="Atlan" width="120" height="120" style="display:block; border-radius:999px; box-shadow: inset 0 1px 0 rgba(236,247,248,0.12), 0 0 0 1px rgba(14,138,154,0.22), 0 24px 60px -20px rgba(14,138,154,0.55);"/>
+        <div class="badge"><span class="dot"></span>Self-Initiated Concept</div>
+      </div>
+      <div style="height:4px; width:96px; background:var(--coral);"></div>
+      <h1 class="cover-title">Atlan<span class="dot">.</span></h1>
+      <p class="cover-sub">Liquid Precision &amp; The Quiet Sage.</p>
+      <div class="cover-meta">
+        <div class="row"><span class="k">A self-initiated</span><span>UX concept project · ~10 weeks, solo, end-to-end.</span></div>
+        <div class="row"><span class="k">Designer</span><span>Edgar Bonilla · <span style="color:var(--foam-56);">erbonilla@outlook.com</span></span></div>
+        <div class="row"><span class="k">Date</span><span>May 2026 · Portfolio review v0.1</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 02 — One-line claim ─────────────────────────── -->
+  <section class="bg-deep" data-screen-label="02 One-line claim">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>THE CLAIM</span></div>
+      <div>02 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">01</span> The one-line claim</span>
+      </div>
+      <h1 class="slide-h1" style="max-width:1500px;">
+        An emotionally intelligent coach<br/>
+        <em>for athletes with lives.</em>
+      </h1>
+      <p class="slide-deck" style="margin-top:48px; max-width:1400px;">
+        A self-initiated UX concept project: an offline-first, bilingual coaching PWA for
+        executive endurance athletes (30–50), built end-to-end solo over ~10 weeks.
+      </p>
+
+      <div class="stat-grid" style="margin-top:auto;">
+        <div><div class="stat-n">7</div><div class="stat-l">Sections</div></div>
+        <div><div class="stat-n">7</div><div class="stat-l">Hi-fi artifacts</div></div>
+        <div><div class="stat-n">16:1</div><div class="stat-l">AAA contrast (Wet Mode)</div></div>
+        <div><div class="stat-n">2</div><div class="stat-l">Languages, at parity</div></div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left">Built (PWA functional); not launched to users.</div>
+      <div class="right">EDGAR BONILLA · MAY 2026</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 03 — My role ────────────────────────────────── -->
+  <section class="bg-light" data-screen-label="03 My role">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>ROLE</span></div>
+      <div>03 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">02</span> My role</span>
+      </div>
+      <h2 class="slide-h2" style="max-width:1300px;">
+        Strategy, IA, every wireframe, every hi-fi screen, every line of code. <em>Solo.</em>
+      </h2>
+
+      <div class="role-block" style="margin-top:64px;">
+        <div class="row">
+          <div class="k">Owned</div>
+          <div class="v">Strategy · Brand system · Design system tokens · IA · All wireframes &amp; high-fidelity UI · Wet Mode interaction model · Session Swapper flow · Bilingual onboarding · PWA implementation in code.</div>
+        </div>
+        <div class="row">
+          <div class="k">Worked across</div>
+          <div class="v">Adherence-science synthesis (Self-Determination Theory, sport-psychology) · Competitive teardown · Technical scoping for an offline-first PWA.</div>
+        </div>
+        <div class="row">
+          <div class="k">Gave up</div>
+          <div class="v">A real user research panel. This is a concept project — research is secondary literature plus light primary conversations. The persona is synthesis, not ethnography.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:48px; padding-left:28px; border-left:3px solid var(--coral); font-family:var(--display); font-style:italic; font-weight:400; font-size:34px; line-height:1.3; color:var(--abyss); max-width:1300px;">
+        "Every decision in this case study is one I made and can defend."
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 04 — Problem 1 of 2 ─────────────────────────── -->
+  <section class="bg-deep" data-screen-label="04 Problem 1/2">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>PROBLEM · 1 OF 2</span></div>
+      <div>04 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">03</span> Problem &amp; context</span>
+      </div>
+      <h2 class="slide-h2" style="max-width:1500px; margin-bottom:64px;">
+        The endurance-tech market has solved two problems well, and <em>neither of them</em> is The Optimizer's.
+      </h2>
+
+      <div class="two-col" style="height:auto; margin-top:auto;">
+        <div>
+          <div class="eyebrow" style="margin-bottom:24px;">Deep without empathy</div>
+          <p style="font-size:22px;"><strong>TrainingPeaks · "the data."</strong> Periodization telemetry, threshold metrics, TSS-based load management. Assumes the user has the bandwidth to interpret a CTL/ATL/TSB curve at 9 PM. Has the rigor; lacks the empathy.</p>
+          <div style="margin-top:40px; padding:24px 28px; background:rgba(236,247,248,0.04); border:1px solid var(--foam-16); border-radius:4px;">
+            <div class="numeric-val tide" style="font-size:80px;">∞</div>
+            <div class="numeric-lbl" style="margin-top:8px;">Decisions surfaced to the user, daily</div>
+          </div>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:24px;">Empathy without depth</div>
+          <p style="font-size:22px;"><strong>Strava · "the crowd."</strong> Gamifies training into public performance — leaderboards, kudos, streaks. Uses social comparison as the adherence mechanism. Has the warmth; lacks the depth.</p>
+          <div style="margin-top:40px; padding:24px 28px; background:rgba(255,106,61,0.04); border:1px solid rgba(255,106,61,0.32); border-radius:4px;">
+            <div class="numeric-val coral" style="font-size:80px;">0</div>
+            <div class="numeric-lbl" style="margin-top:8px;">Citations under the prescribed-workout's "why"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left">The Optimizer needs both sides — rigor <em>and</em> adherence support. Neither product is built for them.</div>
+      <div class="right">FIG. 01 NEXT →</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 05 — Problem 2 of 2 → FIG.01 ────────────────── -->
+  <section class="bg-abyss" data-screen-label="05 Where the gap sits — FIG.01">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>PROBLEM · 2 OF 2 · FIG. 01</span></div>
+      <div>05 / 22</div>
+    </div>
+    <div class="slide-body" style="bottom:140px;">
+      <div class="slide-eyebrow-row" style="margin-bottom:24px;">
+        <span class="eyebrow"><span class="num">→</span> Where the gap sits</span>
+      </div>
+      <div class="fig-stage" style="flex:1;">
+        <iframe src="figures/fig-01-competitive.html" title="FIG. 01 — Competitive 2×2"></iframe>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>"The upper-right is empty. The case study has to earn it."</em></div>
+      <div class="right">FIG. 01 · COMPETITIVE 2×2</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 06 — User disclosure first ──────────────────── -->
+  <section class="bg-light" data-screen-label="06 User — disclosure first">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>PERSONA · DISCLOSURE</span></div>
+      <div>06 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">04</span> The user — disclosure first</span>
+      </div>
+      <h2 class="slide-h2" style="max-width:1500px;">
+        Before the persona, <em>the methodology.</em>
+      </h2>
+
+      <div style="margin-top:64px; padding:48px 56px; background:var(--foam); border:1px solid var(--abyss-08); border-left:4px solid var(--coral); border-radius:0 4px 4px 0; max-width:1500px;">
+        <div style="font-family:var(--body); font-size:14px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--coral); margin-bottom:24px;">Research-honesty disclosure</div>
+        <p style="font-size:26px; line-height:1.5; color:var(--abyss-72); margin-bottom:20px;">
+          The Optimizer is a synthesis persona built from <strong style="color:var(--abyss);">secondary research</strong>
+          — Self-Determination Theory, adherence literature in endurance sports, app-store reviews and forum threads —
+          and <strong style="color:var(--abyss);">informal conversations</strong> with athletes in my network.
+        </p>
+        <p style="font-size:26px; line-height:1.5; color:var(--abyss-72);">
+          I did <strong style="color:var(--abyss);">not</strong> run formal moderated interviews or recruit a research panel.
+          The persona is presented as <em style="font-family:var(--display); font-style:italic;">synthesis</em>, not ethnography.
+          No quote in this case study is attributed to an individual.
+        </p>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left">Methodology before persona. Posture before claim.</div>
+      <div class="right">FIG. 02 NEXT →</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 07 — The Optimizer (FIG.02) ─────────────────── -->
+  <section class="bg-abyss" data-screen-label="07 The Optimizer — FIG.02">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>PERSONA · FIG. 02</span></div>
+      <div>07 / 22</div>
+    </div>
+    <div class="slide-body" style="bottom:140px;">
+      <div class="slide-eyebrow-row" style="margin-bottom:24px;">
+        <span class="eyebrow"><span class="num">→</span> The Optimizer — at a glance</span>
+      </div>
+      <div class="fig-stage" style="flex:1;">
+        <iframe src="figures/fig-02-persona.html" title="FIG. 02 — The Optimizer"></iframe>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>Executive athlete, 30–50, 8–12 h/week, bilingual ES/EN. Composite voice; not attributed.</em></div>
+      <div class="right">FIG. 02 · PERSONA CARD</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 08 — Headline insight pullquote ─────────────── -->
+  <section class="bg-deep" data-screen-label="08 Headline insight — pullquote">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>INSIGHT</span></div>
+      <div>08 / 22</div>
+    </div>
+    <div class="slide-body pullquote-slide">
+      <div class="eyebrow" style="margin-bottom:48px;"><span class="num">→</span> The headline insight</div>
+      <div class="pullquote">
+        Cognitive fatigue is just as detrimental to adherence as <em>physical</em> fatigue.
+        <span class="pullquote-attribution">The Optimizer · Cluster 4, research synthesis</span>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left">The Optimizer is not deficient on drive or discipline. They are deficient on <em>alignment.</em></div>
+      <div class="right">09 / 22 NEXT — THE REFRAME</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 09 — Reframe pullquote ──────────────────────── -->
+  <section class="bg-deep" data-screen-label="09 The reframe — pullquote">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>THE REFRAME</span></div>
+      <div>09 / 22</div>
+    </div>
+    <div class="slide-body pullquote-slide">
+      <div class="eyebrow" style="margin-bottom:48px;"><span class="num">→</span> The reframe that did the work</div>
+      <div class="pullquote">
+        Life-interruption is the <em>default state</em> for this user, not the exception.<br/>
+        The product's job is to <em>absorb disruption silently,</em> not to mark it red.
+        <span class="pullquote-attribution">One sentence · The IA descends from here</span>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left">From this sentence: <em>what is the cheapest possible interaction that lets the user keep training when the week breaks?</em></div>
+      <div class="right">FIG. 03 NEXT →</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 10 — Journey map FIG.03 ─────────────────────── -->
+  <section class="bg-abyss" data-screen-label="10 Journey — FIG.03">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>JOURNEY · FIG. 03</span></div>
+      <div>10 / 22</div>
+    </div>
+    <div class="slide-body" style="bottom:140px;">
+      <div class="slide-eyebrow-row" style="margin-bottom:24px;">
+        <span class="eyebrow"><span class="num">→</span> The meeting ran late — competitor vs. Atlan</span>
+      </div>
+      <div class="fig-stage" style="flex:1;">
+        <iframe src="figures/fig-03-journey.html" title="FIG. 03 — Journey Map"></iframe>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>Banned voice reproduced in the competitor track is intentional contrast. See Slide 21.</em></div>
+      <div class="right">FIG. 03 · JOURNEY MAP</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 11 — Session Swapper detail ─────────────────── -->
+  <section class="bg-deep" data-screen-label="11 Session Swapper detail">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>SESSION SWAPPER</span></div>
+      <div>11 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">→</span> The Session Swapper</span>
+      </div>
+      <h2 class="slide-h2" style="max-width:1300px;">
+        Three properties. <em>One gesture.</em> Silent recalc.
+      </h2>
+
+      <div class="two-col" style="margin-top:72px; height:auto;">
+        <ol class="lst">
+          <li><strong>Notification-reachable.</strong> The Swapper meets the user where the disruption arrives: push or in-app banner. No deep-link surgery.</li>
+          <li><strong>One-gesture commit.</strong> Swipe to accept the alternative, or tap "Skip today." Neither path is a fail-state. Both update the plan.</li>
+          <li><strong>Silent recalc.</strong> The week's periodization rebalances without exposing the math. Depth on demand: tap the metric label.</li>
+        </ol>
+
+        <div class="methodology">
+          <span class="label">Locked notification copy</span>
+          <p style="font-family:var(--display); font-style:italic; font-weight:400; font-size:30px; line-height:1.35; color:var(--foam); letter-spacing:-0.015em;">
+            "Life happens. Want to swap tomorrow's 6 AM threshold set for a 30-minute easy aerobic on Wednesday? The week still works."
+          </p>
+          <div style="height:1px; background:var(--foam-16); margin:24px 0;"></div>
+          <p style="font-size:17px; color:var(--foam-72);">
+            <strong style="color:var(--foam);">Sage 60 / Hero 40</strong> on this surface. Empathy first
+            ("Life happens"), action second ("Want to swap"), reassurance third ("The week still works").
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 12 — Subtraction FIG.04 ─────────────────────── -->
+  <section class="bg-abyss" data-screen-label="12 Subtraction — FIG.04">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>SUBTRACTION · FIG. 04</span></div>
+      <div>12 / 22</div>
+    </div>
+    <div class="slide-body" style="bottom:140px;">
+      <div class="slide-eyebrow-row" style="margin-bottom:24px;">
+        <span class="eyebrow"><span class="num">→</span> Subtraction as a design move</span>
+      </div>
+      <div class="fig-stage" style="flex:1;">
+        <iframe src="figures/fig-04-before-after.html" title="FIG. 04 — Before / After"></iframe>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>21 → 6 elements · 5 → 1 charts · 4 → 0 pressure mechanics · 0 → 4 "Why" affordances.</em></div>
+      <div class="right">FIG. 04 · BEFORE / AFTER</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 13 — Pillar 1 Wet Mode FIG.05 ───────────────── -->
+  <section class="bg-abyss" data-screen-label="13 Pillar 1 — Wet Mode · FIG.05">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>PILLAR 01 · WET MODE · FIG. 05</span></div>
+      <div>13 / 22</div>
+    </div>
+    <div class="slide-body" style="bottom:140px;">
+      <div class="slide-eyebrow-row" style="margin-bottom:24px; justify-content:space-between; display:flex; align-items:center;">
+        <span class="eyebrow"><span class="num">→</span> Pillar 01 — Wet Mode</span>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span class="ratio-bar" style="width:200px;"><span class="sage" style="width:90%;"></span><span class="hero-c" style="width:10%;"></span></span>
+          <span style="font-family:var(--mono); font-size:14px; color:var(--foam-72); letter-spacing:0.06em;">
+            <strong style="color:var(--tide-soft); font-weight:700;">90% Sage</strong> · 10% Hero
+          </span>
+        </div>
+      </div>
+      <div class="fig-stage" style="flex:1;">
+        <iframe src="figures/fig-05-wet-mode.html" title="FIG. 05 — Wet Mode"></iframe>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>Spec floors: 320×360 px touch · 16:1 contrast · 144 px headline · 100% offline persistence.</em></div>
+      <div class="right">FIG. 05 · WET MODE</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 14 — Pillar 2 Why button FIG.06 ─────────────── -->
+  <section class="bg-abyss" data-screen-label="14 Pillar 2 — Why button · FIG.06">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>PILLAR 02 · WHY BUTTON · FIG. 06</span></div>
+      <div>14 / 22</div>
+    </div>
+    <div class="slide-body" style="bottom:140px;">
+      <div class="slide-eyebrow-row" style="margin-bottom:24px; justify-content:space-between; display:flex; align-items:center;">
+        <span class="eyebrow"><span class="num">→</span> Pillar 02 — The "Why" button</span>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span class="ratio-bar" style="width:200px;"><span class="sage" style="width:95%;"></span><span class="hero-c" style="width:5%;"></span></span>
+          <span style="font-family:var(--mono); font-size:14px; color:var(--foam-72); letter-spacing:0.06em;">
+            <strong style="color:var(--tide-soft); font-weight:700;">95% Sage</strong> · 5% Hero
+          </span>
+        </div>
+      </div>
+      <div class="fig-stage" style="flex:1;">
+        <iframe src="figures/fig-06-why-button.html" title="FIG. 06 — The Why button"></iframe>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>Cite: Maglischo, E. W. (2003). Swimming Fastest (2nd ed.), pp. 348–356. Verifiable, in-line.</em></div>
+      <div class="right">FIG. 06 · "WHY" BUTTON</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 15 — Pillar 3 Onboarding FIG.07 ─────────────── -->
+  <section class="bg-abyss" data-screen-label="15 Pillar 3 — Bilingual onboarding · FIG.07">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>PILLAR 03 · ONBOARDING · FIG. 07</span></div>
+      <div>15 / 22</div>
+    </div>
+    <div class="slide-body" style="bottom:140px;">
+      <div class="slide-eyebrow-row" style="margin-bottom:24px; justify-content:space-between; display:flex; align-items:center;">
+        <span class="eyebrow"><span class="num">→</span> Pillar 03 — Bilingual onboarding</span>
+        <div style="display:flex; align-items:center; gap:16px;">
+          <span class="ratio-bar" style="width:200px;"><span class="sage" style="width:55%;"></span><span class="hero-c" style="width:45%;"></span></span>
+          <span style="font-family:var(--mono); font-size:14px; color:var(--foam-72); letter-spacing:0.06em;">
+            <strong style="color:var(--tide-soft); font-weight:700;">55% Sage</strong> · 45% Hero
+          </span>
+        </div>
+      </div>
+      <div class="fig-stage" style="flex:1;">
+        <iframe src="figures/fig-07-onboarding.html" title="FIG. 07 — Bilingual onboarding"></iframe>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>EN: "Built for athletes with lives." · ES: "Hecho para quienes entrenan entre todo lo demás."</em></div>
+      <div class="right">FIG. 07 · ONBOARDING</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 16 — Measured outcome ───────────────────────── -->
+  <section class="bg-light" data-screen-label="16 Measured outcome — Tile 01">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>OUTCOMES · MEASURED</span></div>
+      <div>16 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row" style="gap:24px;">
+        <span class="eyebrow"><span class="num">05</span> Outcomes — what I can claim</span>
+        <div class="badge badge--measured"><span class="dot"></span>Measured · Tile 01</div>
+      </div>
+      <h2 class="slide-h2" style="max-width:1500px;">
+        WCAG 2.2 AA across primary surfaces. <em>AAA on the high-stakes screen.</em>
+      </h2>
+
+      <div class="stat-grid" style="margin-top:96px; grid-template-columns: repeat(3, 1fr); gap:80px; border-top:0; padding-top:0;">
+        <div>
+          <div class="numeric-val tide">11.8:1</div>
+          <div class="numeric-lbl" style="margin-top:16px;">Abyss text on Foam</div>
+          <div class="numeric-note" style="margin-top:8px;">Exceeds AAA 7:1 · Default reading body</div>
+        </div>
+        <div>
+          <div class="numeric-val coral">16:1</div>
+          <div class="numeric-lbl" style="margin-top:16px;">Foam on Abyss-deep · Wet Mode</div>
+          <div class="numeric-note" style="margin-top:8px;">Exceeds AAA 7:1 · The high-stakes screen</div>
+        </div>
+        <div>
+          <div class="numeric-val">5.2:1</div>
+          <div class="numeric-lbl" style="margin-top:16px;">Secondary surfaces</div>
+          <div class="numeric-note" style="margin-top:8px;">Above AA 4.5:1</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left">Source: contrast ratios verified against design tokens — <span style="font-family:var(--mono);">#0B2A3C · #ECF7F8 · #061a26</span>.</div>
+      <div class="right">TILE 01 / 03 · MEASURED</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 17 — Hypothesis 1 of 2 ──────────────────────── -->
+  <section class="bg-deep" data-screen-label="17 Hypothesis 1/2 — 90-day adherence">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>OUTCOMES · HYPOTHESIS 1 OF 2</span></div>
+      <div>17 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row" style="gap:24px;">
+        <span class="eyebrow"><span class="num">→</span> What I can claim — with a plan</span>
+        <div class="badge badge--hypothesis"><span class="dot"></span>Hypothesis · Tile 02</div>
+      </div>
+      <h2 class="slide-h2" style="max-width:1600px;">
+        A 90-day Atlan cohort would show <em>≥15% higher session-completion adherence</em> than a TrainingPeaks-style control.
+      </h2>
+
+      <div class="two-col" style="margin-top:64px; height:auto;">
+        <div class="methodology">
+          <span class="label">Measurement plan</span>
+          <ul class="lst" style="gap:14px;">
+            <li><strong>Design:</strong> between-subjects, random assignment, pre-registered.</li>
+            <li><strong>Participants:</strong> 30–50 per arm, Optimizer demographic.</li>
+            <li><strong>Duration:</strong> 90+ days · primary uses weeks 7–12.</li>
+            <li><strong>Primary:</strong> weekly session-completion rate.</li>
+            <li><strong>Stats:</strong> α = 0.05 · power = 0.80.</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:22px;">
+            Effect size grounded in <strong>Teixeira et al. (2012)</strong> — SDT meta-review of autonomy-supportive
+            interventions in physical-activity contexts (10–25% adherence improvements vs. controlling conditions).
+          </p>
+          <div style="margin-top:48px; padding:28px 32px; background:rgba(255,106,61,0.06); border:1px solid rgba(255,106,61,0.32); border-radius:4px;">
+            <span style="font-family:var(--body); font-size:13px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--coral);">Falsification</span>
+            <p style="font-size:20px; margin-top:14px; color:var(--foam-92);">
+              If the 95% CI for the difference crosses zero, the hypothesis is <strong>rejected.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>Hypothesis, not retention curve. The PWA has not been launched to users.</em></div>
+      <div class="right">TILE 02 / 03 · HYPOTHESIS</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 18 — Hypothesis 2 of 2 ──────────────────────── -->
+  <section class="bg-deep" data-screen-label="18 Hypothesis 2/2 — Wet Mode time-to-action">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>OUTCOMES · HYPOTHESIS 2 OF 2</span></div>
+      <div>18 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row" style="gap:24px;">
+        <span class="eyebrow"><span class="num">→</span> What I can claim — with a plan</span>
+        <div class="badge badge--hypothesis"><span class="dot"></span>Hypothesis · Tile 03</div>
+      </div>
+      <h2 class="slide-h2" style="max-width:1600px;">
+        Wet hands inside a waterproof pouch complete "mark set complete" <em>≥40% faster</em> in Wet Mode.
+      </h2>
+
+      <div class="two-col" style="margin-top:64px; height:auto;">
+        <div class="methodology">
+          <span class="label">Measurement plan</span>
+          <ul class="lst" style="gap:14px;">
+            <li><strong>Design:</strong> within-subjects counterbalanced.</li>
+            <li><strong>Participants:</strong> 12–18 · real pool deck.</li>
+            <li><strong>Condition:</strong> wet hands · sun glare.</li>
+            <li><strong>Primary:</strong> time-to-completion across 5 sets.</li>
+            <li><strong>Secondary:</strong> error rate (false-positive completes; missed completes).</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:22px;">
+            Predicted from the Wet Mode spec floors: 320×360 px touch zones (≈25× WCAG AA minimum),
+            16:1 contrast (exceeds AAA), and a one-direction swipe gesture grammar.
+          </p>
+          <div style="margin-top:48px; padding:28px 32px; background:rgba(255,106,61,0.06); border:1px solid rgba(255,106,61,0.32); border-radius:4px;">
+            <span style="font-family:var(--body); font-size:13px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--coral);">Falsification</span>
+            <p style="font-size:20px; margin-top:14px; color:var(--foam-92);">
+              If the within-subjects mean delta is &lt; 40% <strong>or</strong> error rates equalize, <strong>rejected.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>Hypothesis. Real pool, real water, real wet hands. Stage 02 in the roadmap.</em></div>
+      <div class="right">TILE 03 / 03 · HYPOTHESIS</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 19 — Validation roadmap ─────────────────────── -->
+  <section class="bg-light" data-screen-label="19 Validation roadmap">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>ROADMAP</span></div>
+      <div>19 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">→</span> Validation roadmap</span>
+      </div>
+      <h2 class="slide-h2" style="max-width:1500px;">
+        Five stages. <em>Sequenced by empirical cost.</em>
+      </h2>
+
+      <div class="stages" style="margin-top:64px;">
+        <div class="stage">
+          <div class="stage-n">STAGE 01</div>
+          <div>
+            <div class="stage-t">Closed beta</div>
+            <div class="stage-d">5–8 recruited Optimizer-demographic participants. Two weeks. Smoke test for the Wet Mode and Why-button affordances.</div>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-n">STAGE 02</div>
+          <div>
+            <div class="stage-t">Wet Mode in-environment study</div>
+            <div class="stage-d">Tile 03. Real pool, wet hands, real sun. 12–18 participants. Time-to-action and error rate.</div>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-n">STAGE 03</div>
+          <div>
+            <div class="stage-t">90-day adherence cohort</div>
+            <div class="stage-d">Tile 02. Between-subjects, 30–50 per arm, pre-registered. The expensive one.</div>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-n">STAGE 04</div>
+          <div>
+            <div class="stage-t">Bilingual cohort sub-analysis</div>
+            <div class="stage-d">From Stage 03 data: parity of completion rate between ES-primary and EN-primary users.</div>
+          </div>
+        </div>
+        <div class="stage">
+          <div class="stage-n">STAGE 05</div>
+          <div>
+            <div class="stage-t">SME audit of citations</div>
+            <div class="stage-d">Every "Why" modal citation audited by a subject-matter expert. Stage 5, not stage 1, because the citations need to ship first.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 20 — What I'd do differently ────────────────── -->
+  <section class="bg-paper" data-screen-label="20 What I'd do differently">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>REFLECTION</span></div>
+      <div>20 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">→</span> What I'd do differently</span>
+      </div>
+      <h2 class="slide-h2" style="max-width:1500px;">
+        Four things, framed in the conditional voice.
+      </h2>
+
+      <ol class="lst" style="margin-top:80px; gap:32px;">
+        <li><strong>Recruit before locking the persona.</strong> 5–8 Optimizer-demographic participants, unstructured interviews — <em>before</em> the persona ships, not after.</li>
+        <li><strong>Wet Mode study during, not after, the design.</strong> Time-to-action data would have either reinforced the 320×360 px floor or moved it. Either way, the design ships with proof, not prediction.</li>
+        <li><strong>Spanish-native copywriter on Welcome &amp; Calibration <em>before</em> shipping.</strong> The parity-locked lines are mine; a native voice would have pressure-tested the rhythm and the regional register.</li>
+        <li><strong>Build the summary form of the case study, not just the full form.</strong> A two-page summary that a portfolio reviewer can read in five minutes. Belongs next to this deck.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 21 — Honesty & disclosure ───────────────────── -->
+  <section class="bg-deep" data-screen-label="21 Honesty & disclosure">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>HONESTY · DISCLOSURE</span></div>
+      <div>21 / 22</div>
+    </div>
+    <div class="slide-body">
+      <div class="slide-eyebrow-row">
+        <span class="eyebrow"><span class="num">06</span> Honesty &amp; disclosure</span>
+      </div>
+      <h2 class="slide-h2" style="max-width:1500px;">
+        Acceleration, <em>not authorship.</em>
+      </h2>
+
+      <div class="two-col" style="margin-top:64px; height:auto;">
+        <div>
+          <p style="font-size:22px;">
+            Implementation used <strong>Cursor</strong>, <strong>Claude Code</strong>, and <strong>Codex</strong>
+            as code-acceleration tools. This case study's web page and deck use Claude Design as a
+            layout-and-render tool.
+          </p>
+          <p style="font-size:22px; margin-top:24px;">
+            <strong>Strategy, IA, persona, voice rules, the reframe, the three pillars, the measurement plans,
+            every operating rule — those are mine.</strong> AI accelerated implementation; AI did not author design strategy.
+          </p>
+        </div>
+        <div class="methodology" style="border-left-color:var(--coral);">
+          <span class="label">Other disclosures</span>
+          <ul class="lst" style="gap:14px;">
+            <li><strong>Persona:</strong> synthesis from secondary research + informal conversations. No quote attributed to an individual.</li>
+            <li><strong>Banned phrases in Fig. 03</strong> are deliberate contrast — the language Atlan is designed against.</li>
+            <li><strong>Citations:</strong> every "Why" modal citation is real and verifiable. Maglischo (2003) is the threshold modal.</li>
+            <li><strong>Status:</strong> Built (PWA functional); <em>not</em> launched to users.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left"><em>The case study reads as confidently honest, or it doesn't read at all.</em></div>
+      <div class="right">21 / 22</div>
+    </div>
+  </section>
+
+  <!-- ─── SLIDE 22 — Closing ────────────────────────────────── -->
+  <section class="bg-deep" data-screen-label="22 Closing">
+    <div class="slide-chrome">
+      <div class="left"><span class="logo">atlan<span class="dot">.</span></span><span class="sep"></span><span>CLOSING</span></div>
+      <div>22 / 22</div>
+    </div>
+    <div class="slide-body pullquote-slide">
+      <div class="eyebrow" style="margin-bottom:48px; display:flex; align-items:center; gap:20px;">
+        <img src="assets/atlan_logo_bk.svg" alt="Atlan" width="56" height="56" style="display:block; border-radius:999px; box-shadow: inset 0 1px 0 rgba(236,247,248,0.12), 0 0 0 1px rgba(14,138,154,0.22), 0 12px 30px -14px rgba(14,138,154,0.55);"/>
+        <span><span class="num">→</span> Closing</span>
+      </div>
+      <div class="pullquote" style="font-size:72px;">
+        The case study reads as <em>confidently honest,</em><br/>
+        or it doesn't read at all.<br/><br/>
+        The next step is a recruited cohort. The next step after that <em>is the data.</em>
+        <span class="pullquote-attribution">Edgar Bonilla · May 2026</span>
+      </div>
+    </div>
+    <div class="slide-foot">
+      <div class="left">Contact — <span style="font-family:var(--mono); color:var(--foam-72);">erbonilla@outlook.com</span></div>
+      <div class="right">END · 22 / 22</div>
+    </div>
+  </section>
+
+</deck-stage>
+
+</body>
+</html>

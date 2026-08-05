@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depth on Demand — The "Why" Button · Atlan Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --abyss: #0B2A3C;
+  --abyss-deep: #061a26;
+  --abyss-92: rgba(11, 42, 60, 0.92);
+  --abyss-72: rgba(11, 42, 60, 0.72);
+  --abyss-56: rgba(11, 42, 60, 0.56);
+  --abyss-40: rgba(11, 42, 60, 0.40);
+  --abyss-24: rgba(11, 42, 60, 0.24);
+  --abyss-16: rgba(11, 42, 60, 0.16);
+  --abyss-08: rgba(11, 42, 60, 0.08);
+  --abyss-04: rgba(11, 42, 60, 0.04);
+  --tide: #0E8A9A;
+  --tide-deep: #0A6F7D;
+  --tide-soft: #BFE0E5;
+  --tide-pale: #DDEEF1;
+  --coral: #FF6A3D;
+  --coral-bright: #FF7E50;
+  --foam: #ECF7F8;
+  --foam-warm: #F4FAFB;
+  --paper: #FBFCFC;
+  --display: 'Fraunces', 'Georgia', serif;
+  --body: 'Manrope', 'Helvetica Neue', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--abyss);
+  font-family: var(--body);
+  color: var(--abyss);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 64px 32px;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 20%, rgba(14, 138, 154, 0.08), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 80%, rgba(255, 106, 61, 0.04), transparent 55%),
+    var(--abyss);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.why-card {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--foam);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 32px 80px -16px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 3px;
+  background: var(--coral);
+  z-index: 5;
+}
+
+/* HEADER */
+.card-header {
+  padding: 56px 64px 32px;
+}
+.eyebrow {
+  display: block;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 24px;
+}
+.card-title {
+  font-family: var(--display);
+  font-size: 64px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 144;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--abyss);
+  margin-bottom: 14px;
+}
+.card-subtitle {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  color: var(--abyss-72);
+  line-height: 1.45;
+  max-width: 720px;
+}
+
+/* FLOW SECTION */
+.flow-section {
+  padding: 32px 64px 56px;
+  border-top: 1px solid var(--abyss-08);
+}
+
+.section-eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--abyss);
+  margin-bottom: 36px;
+  max-width: 720px;
+}
+
+.two-phones {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+.phone-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.screen-label {
+  font-family: var(--body);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+  padding: 5px 14px;
+  border: 1px solid var(--abyss-24);
+  border-radius: 100px;
+}
+.phone-column.b .screen-label {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+/* PHONE */
+.phone {
+  width: 340px;
+  height: 720px;
+  background: #0d0d0e;
+  border-radius: 44px;
+  padding: 12px;
+  position: relative;
+  box-shadow:
+    0 1px 0 1px rgba(255, 255, 255, 0.04),
+    0 24px 64px -8px rgba(0, 0, 0, 0.35),
+    0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.phone::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 26px;
+  background: #0d0d0e;
+  border-radius: 100px;
+  z-index: 10;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  background: var(--foam);
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* STATUS BAR */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px 0;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--abyss);
+}
+.status-bar .right { display: flex; gap: 6px; align-items: center; }
+
+/* DAILY SESSION VIEW (Screen A) */
+.daily-view {
+  padding: 56px 24px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.daily-eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 12px;
+}
+
+.daily-hero-row {
+  margin-bottom: 28px;
+}
+.daily-discipline {
+  font-family: var(--display);
+  font-size: 42px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--abyss);
+  margin-bottom: 8px;
+}
+.daily-sub {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  letter-spacing: 0.01em;
+}
+
+.daily-structure {
+  background: var(--paper);
+  border: 1px solid var(--abyss-08);
+  border-radius: 8px;
+  padding: 4px 0;
+  margin-bottom: 20px;
+}
+
+.struct-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  position: relative;
+}
+.struct-row + .struct-row {
+  border-top: 1px solid var(--abyss-08);
+}
+.struct-row.main { background: var(--tide-pale); }
+
+.struct-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.struct-tag {
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+}
+.struct-row.main .struct-tag { color: var(--tide-deep); }
+
+.struct-detail {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--abyss);
+  letter-spacing: -0.005em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* The "i" info button */
+.why-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--tide-deep);
+  background: rgba(14, 138, 154, 0.08);
+  color: var(--tide-deep);
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+  font-variation-settings: 'opsz' 60;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.15s;
+  vertical-align: middle;
+}
+.why-btn::after {
+  content: 'i';
+  line-height: 1;
+  margin-top: -1px;
+}
+.why-btn .label { display: none; }
+
+/* The "tapped" state of the i icon on Screen B */
+.why-btn.tapped {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 106, 61, 0.18);
+}
+
+.struct-meta {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--abyss-56);
+}
+
+.daily-pace {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 4px 22px;
+  border-bottom: 1px solid var(--abyss-08);
+  margin-bottom: 24px;
+}
+.pace-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pace-label {
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+}
+.pace-value {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 72;
+  color: var(--abyss);
+  letter-spacing: -0.01em;
+}
+
+.daily-cta {
+  margin-top: auto;
+  padding: 16px;
+  background: var(--abyss);
+  color: var(--foam);
+  border-radius: 100px;
+  text-align: center;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* MODAL OVERLAY (Screen B) */
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 42, 60, 0.45);
+  z-index: 2;
+}
+
+.modal-sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--paper);
+  border-radius: 24px 24px 0 0;
+  padding: 8px 24px 32px;
+  z-index: 3;
+  box-shadow:
+    0 -16px 40px -8px rgba(11, 42, 60, 0.25);
+  display: flex;
+  flex-direction: column;
+  max-height: 78%;
+}
+
+.modal-handle {
+  width: 42px;
+  height: 4px;
+  background: var(--abyss-24);
+  border-radius: 4px;
+  margin: 0 auto 16px;
+}
+
+.modal-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.modal-eyebrow .label {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+}
+.modal-close {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--abyss-08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--abyss-72);
+}
+
+.modal-title {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  color: var(--abyss);
+  margin-bottom: 16px;
+}
+
+.modal-body {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--abyss-92);
+  letter-spacing: 0.005em;
+}
+.modal-body p + p { margin-top: 12px; }
+.modal-body strong { font-weight: 600; color: var(--abyss); }
+
+.modal-mechanism {
+  background: var(--tide-pale);
+  border-left: 2px solid var(--tide);
+  padding: 12px 14px;
+  margin: 16px 0;
+  border-radius: 2px;
+}
+.modal-mechanism .mech-label {
+  font-family: var(--body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 6px;
+}
+.modal-mechanism .mech-list {
+  font-family: var(--body);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--abyss);
+  letter-spacing: 0.005em;
+}
+.modal-mechanism .mech-list li {
+  list-style: none;
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 4px;
+}
+.modal-mechanism .mech-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 1.5px;
+  background: var(--tide);
+}
+
+.modal-citation {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--abyss-08);
+}
+.citation-label {
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--abyss-56);
+  margin-bottom: 6px;
+}
+.citation-text {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--abyss-72);
+  letter-spacing: 0.005em;
+}
+.citation-text em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--abyss);
+}
+
+/* TAP INDICATOR — the curved connector between the two screens */
+.tap-connector {
+  width: 120px;
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.tap-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.tap-pill {
+  position: relative;
+  background: var(--foam);
+  border: 1px solid var(--coral);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  z-index: 2;
+}
+
+/* ANNOTATIONS ROW */
+.annotations-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  padding-top: 48px;
+}
+.annot-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.annot-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--abyss);
+  color: var(--foam);
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+.annot-label {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+}
+.annot-title {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.annot-body {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--abyss-72);
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+}
+
+/* CITATION METHODOLOGY PANEL */
+.method-panel {
+  padding: 48px 64px;
+  background: var(--abyss);
+  color: var(--foam);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+.method-panel .method-head .eyebrow { color: var(--tide-soft); margin-bottom: 14px; }
+.method-panel .method-head h3 {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: var(--foam);
+}
+.method-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.method-rule {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(236, 247, 248, 0.12);
+}
+.method-rule:last-child { border-bottom: none; padding-bottom: 0; }
+.method-num {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 72;
+  color: var(--tide-soft);
+  line-height: 1;
+  padding-top: 4px;
+}
+.method-text {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: rgba(236, 247, 248, 0.85);
+  letter-spacing: 0.005em;
+}
+.method-text strong {
+  color: var(--foam);
+  font-weight: 700;
+}
+
+/* FOOTER */
+.card-footer {
+  padding: 40px 64px 56px;
+  background: var(--foam);
+}
+.takeaway {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.34;
+  color: var(--abyss);
+  letter-spacing: -0.012em;
+  padding-left: 24px;
+  border-left: 2px solid var(--coral);
+  margin-bottom: 18px;
+  max-width: 880px;
+}
+.takeaway .accent {
+  font-weight: 500;
+  background-image: linear-gradient(transparent 68%, rgba(255, 106, 61, 0.22) 68%, rgba(255, 106, 61, 0.22) 92%, transparent 92%);
+}
+.meta-row {
+  display: flex;
+  gap: 24px;
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  line-height: 1.55;
+  padding-top: 6px;
+}
+.meta-row .meta-label {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--abyss-72);
+  font-size: 10px;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<article class="why-card">
+
+  <!-- HEADER -->
+  <header class="card-header">
+    <span class="eyebrow">Depth on Demand · Atlan Performance</span>
+    <h1 class="card-title">The "Why" Button</h1>
+    <p class="card-subtitle">A subtle affordance that puts the biomechanical "why" behind every prescription exactly one tap below the workout view. Calm by default; deep on request.</p>
+  </header>
+
+  <!-- TWO-SCREEN FLOW -->
+  <section class="flow-section">
+    <h2 class="section-eyebrow">Two-screen flow</h2>
+    <h3 class="section-title">A clean main view that respects the user's time — and a citation-grade explanation when they ask for it.</h3>
+
+    <div class="two-phones">
+
+      <!-- SCREEN A — Main view -->
+      <div class="phone-column a">
+        <span class="screen-label">Screen A — Daily session</span>
+        <div class="phone">
+          <div class="screen">
+
+            <div class="status-bar">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+                <svg width="22" height="11" viewBox="0 0 22 11" fill="none">
+                  <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="#0B2A3C" opacity="0.6"/>
+                  <rect x="2" y="2" width="14" height="7" rx="1" fill="#0B2A3C"/>
+                  <rect x="20" y="3.5" width="1.5" height="4" rx="0.5" fill="#0B2A3C" opacity="0.6"/>
+                </svg>
+              </span>
+            </div>
+
+            <div class="daily-view">
+              <div class="daily-eyebrow">Today · Tuesday, May 26</div>
+
+              <div class="daily-hero-row">
+                <div class="daily-discipline">Pool · Threshold</div>
+                <div class="daily-sub">1,000m · ~30 minutes</div>
+              </div>
+
+              <div class="daily-structure">
+                <div class="struct-row">
+                  <div class="struct-label">
+                    <span class="struct-tag">Warm-up</span>
+                    <span class="struct-detail">400m easy</span>
+                  </div>
+                  <span class="struct-meta">~8 min</span>
+                </div>
+                <div class="struct-row main">
+                  <div class="struct-label">
+                    <span class="struct-tag">Main set</span>
+                    <span class="struct-detail">
+                      4 × 100m at threshold
+                      <span class="why-btn" aria-label="Why threshold"></span>
+                    </span>
+                  </div>
+                  <span class="struct-meta">~14 min</span>
+                </div>
+                <div class="struct-row">
+                  <div class="struct-label">
+                    <span class="struct-tag">Cool-down</span>
+                    <span class="struct-detail">200m easy</span>
+                  </div>
+                  <span class="struct-meta">~4 min</span>
+                </div>
+              </div>
+
+              <div class="daily-pace">
+                <div class="pace-block">
+                  <span class="pace-label">Target pace</span>
+                  <span class="pace-value">1:35 / 100m</span>
+                </div>
+                <div class="pace-block" style="text-align: right;">
+                  <span class="pace-label">Send-off</span>
+                  <span class="pace-value">2:00</span>
+                </div>
+              </div>
+
+              <div class="daily-cta">Start session →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAP CONNECTOR -->
+      <div class="tap-connector">
+        <svg class="tap-svg" viewBox="0 0 120 720" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M 0 0 L 8 4 L 0 8 z" fill="#FF6A3D" opacity="0.7"/>
+            </marker>
+          </defs>
+          <!-- A curved path from the "i" icon location on Screen A to the modal on Screen B -->
+          <!-- Approx: Screen A "i" location is to the LEFT of this connector; Screen B modal opens near bottom -->
+          <path d="M 5 305
+                   C 30 305, 50 340, 60 380
+                   C 70 420, 90 480, 115 510"
+                stroke="#FF6A3D"
+                stroke-width="1.5"
+                stroke-dasharray="4 4"
+                fill="none"
+                opacity="0.55"
+                marker-end="url(#arrowhead)"/>
+          <!-- Tap indicator circle near the start -->
+          <circle cx="5" cy="305" r="9" fill="none" stroke="#FF6A3D" stroke-width="1.5" opacity="0.7"/>
+          <circle cx="5" cy="305" r="3" fill="#FF6A3D"/>
+        </svg>
+        <span class="tap-pill">Tap → Reveal</span>
+      </div>
+
+      <!-- SCREEN B — Modal open -->
+      <div class="phone-column b">
+        <span class="screen-label">Screen B — Modal open</span>
+        <div class="phone">
+          <div class="screen">
+
+            <!-- Underlying Screen A content (dimmed) -->
+            <div class="status-bar">
+              <span>9:41</span>
+              <span class="right">
+                <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                  <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="4" y="4" width="3" height="6" rx="0.5" fill="#0B2A3C"/>
+                  <rect x="8" y="2" width="3" height="8" rx="0.5" fill="#0B2A3C"/>
+                </svg>
+                <svg width="22" height="11" viewBox="0 0 22 11" fill="none">
+                  <rect x="0.5" y="0.5" width="18" height="10" rx="2.5" stroke="#0B2A3C" opacity="0.6"/>
+                  <rect x="2" y="2" width="14" height="7" rx="1" fill="#0B2A3C"/>
+                  <rect x="20" y="3.5" width="1.5" height="4" rx="0.5" fill="#0B2A3C" opacity="0.6"/>
+                </svg>
+              </span>
+            </div>
+
+            <div class="daily-view">
+              <div class="daily-eyebrow">Today · Tuesday, May 26</div>
+              <div class="daily-hero-row">
+                <div class="daily-discipline">Pool · Threshold</div>
+                <div class="daily-sub">1,000m · ~30 minutes</div>
+              </div>
+              <div class="daily-structure">
+                <div class="struct-row">
+                  <div class="struct-label">
+                    <span class="struct-tag">Warm-up</span>
+                    <span class="struct-detail">400m easy</span>
+                  </div>
+                  <span class="struct-meta">~8 min</span>
+                </div>
+                <div class="struct-row main">
+                  <div class="struct-label">
+                    <span class="struct-tag">Main set</span>
+                    <span class="struct-detail">
+                      4 × 100m at threshold
+                      <span class="why-btn tapped"></span>
+                    </span>
+                  </div>
+                  <span class="struct-meta">~14 min</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal overlay -->
+            <div class="modal-backdrop"></div>
+            <div class="modal-sheet">
+              <div class="modal-handle"></div>
+              <div class="modal-eyebrow">
+                <span class="label">Depth · Threshold</span>
+                <span class="modal-close">
+                  <svg width="11" height="11" viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <line x1="1" y1="1" x2="10" y2="10"/>
+                    <line x1="10" y1="1" x2="1" y2="10"/>
+                  </svg>
+                </span>
+              </div>
+
+              <h4 class="modal-title">Why threshold</h4>
+
+              <div class="modal-body">
+                <p>Threshold intervals develop <strong>lactate clearance</strong> — the rate at which your body processes accumulating lactate during sustained efforts. Repeating this stimulus at the boundary between sustainable and unsustainable pace raises the work rate you can hold for an extended duration.</p>
+
+                <div class="modal-mechanism">
+                  <div class="mech-label">Mechanism</div>
+                  <ul class="mech-list">
+                    <li>Increased mitochondrial density in slow-twitch fibers</li>
+                    <li>Elevated capillarization around working muscle</li>
+                    <li>Improved enzymatic activity for aerobic energy production</li>
+                  </ul>
+                </div>
+
+                <p>These adaptations distinguish trained endurance athletes from untrained populations. The standard prescription is 4–6 repetitions of 5–15 minutes at threshold pace, with short recoveries — the partial recovery is the point.</p>
+              </div>
+
+              <div class="modal-citation">
+                <div class="citation-label">Reference</div>
+                <p class="citation-text">
+                  Maglischo, E. W. (2003). <em>Swimming Fastest</em> (2nd ed.). Champaign, IL: Human Kinetics, pp. 348–356.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ANNOTATIONS ROW -->
+    <div class="annotations-row">
+
+      <div class="annot-card">
+        <span class="annot-mark">1</span>
+        <span class="annot-label">Affordance</span>
+        <span class="annot-title">22 px target, Tide outline</span>
+        <p class="annot-body">The "i" sits inline with the term it explains — not floating in a separate column. Outlined, not filled. Quiet enough to ignore; visible enough to find.</p>
+      </div>
+
+      <div class="annot-card">
+        <span class="annot-mark">2</span>
+        <span class="annot-label">Modal architecture</span>
+        <span class="annot-title">Bottom sheet, not popup</span>
+        <p class="annot-body">A sheet emerges from below; the underlying session view stays partially visible. The user is still in their workout context, not interrupted by it.</p>
+      </div>
+
+      <div class="annot-card">
+        <span class="annot-mark">3</span>
+        <span class="annot-label">Voice ratio</span>
+        <span class="annot-title">95 % Sage · 5 % Hero</span>
+        <p class="annot-body">The strongest Sage surface in the product. No motivational framing. No "great question!" warmth. Mechanism first, prescription second, attribution third.</p>
+      </div>
+
+      <div class="annot-card">
+        <span class="annot-mark">4</span>
+        <span class="annot-label">Citation discipline</span>
+        <span class="annot-title">Author · year · pages</span>
+        <p class="annot-body">Formal scholarly format. Page range. A real source — not a generic "Studies show…" gesture. Tappable in production to deep-link to Google Scholar or the publisher.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CITATION METHODOLOGY PANEL — dark -->
+  <section class="method-panel">
+    <div class="method-head">
+      <span class="eyebrow">Citation methodology</span>
+      <h3>Every "why" carries a source, or the "why" doesn't ship.</h3>
+    </div>
+    <div class="method-rules">
+      <div class="method-rule">
+        <span class="method-num">01</span>
+        <p class="method-text"><strong>Author, year, page range.</strong> No vague references, no "research suggests" hedges, no decorative footnote glyphs. The reader can find the source in fewer than 60 seconds.</p>
+      </div>
+      <div class="method-rule">
+        <span class="method-num">02</span>
+        <p class="method-text"><strong>Textbook, peer-reviewed paper, or systematic review only.</strong> No blog posts, podcast clips, or coach-of-the-month opinions. Tertiary sources (Wikipedia) are excluded by default.</p>
+      </div>
+      <div class="method-rule">
+        <span class="method-num">03</span>
+        <p class="method-text"><strong>One citation per concept, not per claim.</strong> A modal explaining one biomechanical idea cites one canonical source for that idea. Citation density above one signals the explanation hasn't been edited enough.</p>
+      </div>
+      <div class="method-rule">
+        <span class="method-num">04</span>
+        <p class="method-text"><strong>The citation is visible, not hidden in a footer.</strong> Putting the source at the bottom of a long scroll suggests it's optional. The user should see attribution at the same scroll depth as the claim.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="card-footer">
+    <p class="takeaway">
+      The Optimizer can read the science. They just <span class="accent">don't have time to look it up</span> at 9 PM. The "Why" button puts the source one tap from the term, every time.
+    </p>
+    <div class="meta-row">
+      <span class="meta-label">Sources</span>
+      <span>Phase 2 Output 2 Cluster 4 (cognitive fatigue → subtraction); Cluster 5 (competence micro-wins); Output 4 voice spec (95/5 Sage/Hero for the modal surface). Reference shown: Maglischo, E. W. (2003). <em>Swimming Fastest</em> (2nd ed.). Human Kinetics — a canonical text on swim biomechanics and energy systems, widely cited in coaching curricula.</span>
+    </div>
+  </footer>
+
+</article>
+</div>
+</body>
+</html>

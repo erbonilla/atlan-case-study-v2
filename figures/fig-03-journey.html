@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<template id="__bundler_thumbnail" data-bg-color="#0B2A3C">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="30" width="70" height="8" rx="4" fill="#0E8A9A"/><rect x="15" y="46" width="45" height="8" rx="4" fill="#FF6A3D"/><rect x="15" y="62" width="55" height="8" rx="4" fill="#ECF7F8" opacity="0.6"/></svg>
+</template>
+<title>The Meeting Ran Late — User Journey Map · Atlan Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --abyss: #0B2A3C;
+  --abyss-92: rgba(11, 42, 60, 0.92);
+  --abyss-72: rgba(11, 42, 60, 0.72);
+  --abyss-56: rgba(11, 42, 60, 0.56);
+  --abyss-40: rgba(11, 42, 60, 0.40);
+  --abyss-24: rgba(11, 42, 60, 0.24);
+  --abyss-16: rgba(11, 42, 60, 0.16);
+  --abyss-08: rgba(11, 42, 60, 0.08);
+  --tide: #0E8A9A;
+  --tide-deep: #0A6F7D;
+  --tide-soft: #BFE0E5;
+  --coral: #FF6A3D;
+  --foam: #ECF7F8;
+  --foam-warm: #F4FAFB;
+  --paper: #FBFCFC;
+  --competitor: #6F8995;
+  --competitor-dim: #92A6AF;
+  --alert: #D54B3C;
+  --alert-bg: #FBE8E5;
+  --display: 'Fraunces', 'Georgia', serif;
+  --body: 'Manrope', 'Helvetica Neue', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--abyss);
+  font-family: var(--body);
+  color: var(--abyss);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 64px 32px;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 20%, rgba(14, 138, 154, 0.08), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 85% 80%, rgba(255, 106, 61, 0.04), transparent 55%),
+    var(--abyss);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* THE CARD */
+.journey-card {
+  width: 100%;
+  max-width: 1200px;
+  background: var(--foam);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 32px 80px -16px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+.journey-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 3px;
+  background: var(--coral);
+  z-index: 5;
+}
+
+/* HEADER */
+.card-header {
+  padding: 56px 64px 32px;
+}
+.eyebrow {
+  display: block;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tide-deep);
+  margin-bottom: 24px;
+}
+.journey-title {
+  font-family: var(--display);
+  font-size: 64px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 144;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--abyss);
+  margin-bottom: 14px;
+}
+.subtitle {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  color: var(--abyss-72);
+  line-height: 1.45;
+  letter-spacing: 0;
+  max-width: 720px;
+}
+
+/* LEGEND */
+.legend {
+  padding: 0 64px 28px;
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  border-bottom: 1px solid var(--abyss-08);
+  padding-bottom: 28px;
+  margin-bottom: 0;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--abyss-72);
+}
+.legend-swatch {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+}
+.legend-swatch.comp { background: var(--competitor); }
+.legend-swatch.atl { background: var(--tide); }
+.legend-spacer { flex: 1; }
+.legend-meta {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--abyss-40);
+}
+
+/* JOURNEY BODY */
+.journey {
+  padding: 32px 64px 40px;
+  position: relative;
+}
+
+/* DECISION POINT VERTICAL BAND - the visual anchor for 2:30 PM */
+.decision-band {
+  position: absolute;
+  top: 32px;
+  bottom: 40px;
+  /* will be positioned in JS - or use known X% */
+  /* 2:30 PM marker — using a known proportion */
+  left: calc(64px + (200 / 800) * (100% - 128px) + 0px);
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, var(--coral) 8%, var(--coral) 92%, transparent 100%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+.decision-label {
+  position: absolute;
+  top: 26px;
+  /* Same alignment as decision-band: line center on 2:30 PM */
+  left: calc(64px + (200 / 800) * (100% - 128px) + 0px);
+  transform: translateX(-50%);
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--coral);
+  background: var(--foam);
+  padding: 2px 8px;
+  z-index: 3;
+}
+
+/* TRACKS */
+.track {
+  position: relative;
+  margin-bottom: 8px;
+}
+.track-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+.track-label {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  font-variation-settings: 'opsz' 72;
+  letter-spacing: -0.005em;
+  color: var(--abyss);
+}
+.track.competitor .track-label {
+  color: var(--competitor);
+}
+.track-emotion {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--abyss-56);
+}
+.track.atlan .track-emotion {
+  color: var(--tide-deep);
+}
+.track-emotion .arrow {
+  display: inline-block;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.track-canvas {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+.curve-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* TIME AXIS */
+.time-axis {
+  position: relative;
+  padding: 22px 0 12px;
+  margin: 4px 0 12px;
+  border-top: 1px solid var(--abyss-16);
+  border-bottom: 1px solid var(--abyss-16);
+}
+.time-axis-row {
+  position: relative;
+  width: 100%;
+  height: 64px;
+}
+.time-marker {
+  position: absolute;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 130px;
+}
+.time-marker .time {
+  display: block;
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+  font-variation-settings: 'opsz' 36;
+  color: var(--abyss);
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+}
+.time-marker .event {
+  display: block;
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--abyss-56);
+  letter-spacing: 0.01em;
+}
+.time-marker.decision .time { color: var(--coral); }
+.time-marker .tick {
+  position: absolute;
+  top: -23px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 8px;
+  background: var(--abyss-40);
+}
+.time-marker.decision .tick {
+  background: var(--coral);
+  height: 12px;
+  top: -27px;
+  width: 2px;
+}
+
+/* UI SNIPPETS */
+.ui-snippet {
+  position: absolute;
+  width: 232px;
+  font-family: var(--body);
+  z-index: 4;
+}
+
+/* Competitor snippet — at 9 PM, positioned above the curve */
+.competitor-snippet {
+  /* anchored at 9 PM x = 671/800 = 83.875% of inner */
+  right: 32px;
+  top: -8px;
+  background: white;
+  border: 1px solid var(--abyss-16);
+  border-left: 3px solid var(--alert);
+  border-radius: 3px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 24px -8px rgba(11, 42, 60, 0.18);
+}
+.competitor-snippet .snippet-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--alert);
+  background: var(--alert-bg);
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+.competitor-snippet .snippet-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--abyss);
+  margin-bottom: 4px;
+  letter-spacing: -0.005em;
+}
+.competitor-snippet .snippet-sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.competitor-snippet .snippet-cta {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--alert);
+  text-transform: uppercase;
+}
+
+/* Connector line from competitor snippet to curve */
+.competitor-connector {
+  position: absolute;
+  right: 110px;
+  top: 56px;
+  width: 1px;
+  height: 36px;
+  background: var(--competitor);
+  opacity: 0.4;
+}
+.competitor-connector::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -2.5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--alert);
+  box-shadow: 0 0 0 3px rgba(213, 75, 60, 0.18);
+}
+
+/* Atlan snippet — at 2:30 PM swap moment, positioned below the curve */
+.atlan-snippet {
+  /* anchored at 2:30 PM x = 200/800 = 25% */
+  left: calc(25% + 16px);
+  top: 88px;
+  background: white;
+  border: 1px solid var(--abyss-16);
+  border-left: 3px solid var(--tide);
+  border-radius: 3px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 24px -8px rgba(11, 42, 60, 0.18);
+  width: 252px;
+}
+.atlan-snippet .snippet-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--tide-deep);
+  background: var(--tide-soft);
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.atlan-snippet .swap-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.atlan-snippet .swap-original {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  text-decoration: line-through;
+  flex: 1;
+}
+.atlan-snippet .swap-arrow {
+  text-align: center;
+  font-size: 12px;
+  color: var(--tide);
+  margin: 4px 0;
+}
+.atlan-snippet .swap-new {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--abyss);
+  margin-bottom: 6px;
+  letter-spacing: -0.005em;
+}
+.atlan-snippet .swap-load {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  margin-bottom: 10px;
+}
+.atlan-snippet .swap-affirm {
+  font-family: var(--display);
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 60;
+  color: var(--abyss);
+  letter-spacing: -0.005em;
+  padding-top: 8px;
+  border-top: 1px solid var(--abyss-08);
+  position: relative;
+}
+.atlan-snippet .swap-affirm::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: -16px;
+  width: 8px;
+  height: 1.5px;
+  background: var(--coral);
+}
+
+/* Connector line for atlan snippet */
+.atlan-connector {
+  position: absolute;
+  left: 25%;
+  top: 72px;
+  width: 1px;
+  height: 18px;
+  background: var(--tide);
+  opacity: 0.5;
+}
+.atlan-connector::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -2.5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255, 106, 61, 0.22);
+}
+
+/* CARD FOOTER */
+.card-footer {
+  padding: 32px 64px 56px;
+  border-top: 1px solid var(--abyss-08);
+}
+.takeaway {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: 'opsz' 96;
+  line-height: 1.34;
+  color: var(--abyss);
+  letter-spacing: -0.012em;
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 24px;
+  border-left: 2px solid var(--coral);
+}
+.takeaway .accent {
+  font-weight: 500;
+  background-image: linear-gradient(transparent 68%, rgba(255, 106, 61, 0.22) 68%, rgba(255, 106, 61, 0.22) 92%, transparent 92%);
+}
+.meta-row {
+  display: flex;
+  gap: 24px;
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--abyss-56);
+  letter-spacing: 0.005em;
+  line-height: 1.55;
+  padding-top: 6px;
+}
+.meta-row .meta-label {
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--abyss-72);
+  font-size: 10px;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<article class="journey-card">
+
+  <!-- HEADER -->
+  <header class="card-header">
+    <span class="eyebrow">User Journey Map · Atlan Performance</span>
+    <h1 class="journey-title">The Meeting Ran Late</h1>
+    <p class="subtitle">A representative disruption event, mapped twice. Same person, same Tuesday, two product responses.</p>
+  </header>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <span class="legend-item">
+      <span class="legend-swatch comp"></span>
+      Competitor experience
+    </span>
+    <span class="legend-item">
+      <span class="legend-swatch atl"></span>
+      Atlan experience
+    </span>
+    <span class="legend-spacer"></span>
+    <span class="legend-meta">Vertical axis · perceived confidence + adherence</span>
+  </div>
+
+  <!-- JOURNEY BODY -->
+  <section class="journey">
+
+    <!-- Decision point vertical band -->
+    <div class="decision-band"></div>
+    <div class="decision-label">Decision · 2:30 PM</div>
+
+    <!-- COMPETITOR TRACK -->
+    <div class="track competitor">
+      <div class="track-meta">
+        <span class="track-label">Competitor app</span>
+        <span class="track-emotion">Confidence erodes through the day <span class="arrow">↘</span></span>
+      </div>
+      <div class="track-canvas">
+
+        <svg class="curve-svg" viewBox="0 0 800 200" preserveAspectRatio="none">
+          <defs>
+            <!-- Faint baseline gridline -->
+            <pattern id="dot-comp" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="3" cy="3" r="0.6" fill="#6F8995" opacity="0.18"/>
+            </pattern>
+            <linearGradient id="comp-fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#6F8995" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#6F8995" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Neutral baseline -->
+          <line x1="20" y1="100" x2="780" y2="100" stroke="#0B2A3C" stroke-opacity="0.10" stroke-dasharray="2 4"/>
+          <text x="780" y="95" text-anchor="end" font-family="Manrope" font-size="9" font-weight="600" letter-spacing="0.18em" fill="#0B2A3C" fill-opacity="0.4">NEUTRAL</text>
+
+          <!-- Area fill under curve -->
+          <path d="M 20,72
+                   C 80,75 130,90 165,100
+                   C 180,107 195,118 201,125
+                   C 280,130 380,135 454,138
+                   C 530,145 600,158 671,168
+                   C 710,165 750,160 780,156
+                   L 780,200 L 20,200 Z"
+                fill="url(#comp-fade)"/>
+
+          <!-- Competitor curve - the main path -->
+          <path d="M 20,72
+                   C 80,75 130,90 165,100
+                   C 180,107 195,118 201,125
+                   C 280,130 380,135 454,138
+                   C 530,145 600,158 671,168
+                   C 710,165 750,160 780,156"
+                stroke="#6F8995"
+                stroke-width="2.5"
+                fill="none"
+                stroke-linecap="round"/>
+
+          <!-- Anchor dots -->
+          <circle cx="20" cy="72" r="3.5" fill="#fff" stroke="#6F8995" stroke-width="1.5"/>
+          <circle cx="165" cy="100" r="3.5" fill="#fff" stroke="#6F8995" stroke-width="1.5"/>
+          <circle cx="201" cy="125" r="3.5" fill="#fff" stroke="#6F8995" stroke-width="1.5"/>
+          <circle cx="454" cy="138" r="3.5" fill="#fff" stroke="#6F8995" stroke-width="1.5"/>
+          <!-- 9 PM rock-bottom: red ring -->
+          <circle cx="671" cy="168" r="5" fill="#D54B3C"/>
+          <circle cx="671" cy="168" r="9" fill="none" stroke="#D54B3C" stroke-opacity="0.25" stroke-width="2"/>
+          <circle cx="780" cy="156" r="3.5" fill="#fff" stroke="#6F8995" stroke-width="1.5"/>
+
+          <!-- Annotations -->
+          <text x="201" y="146" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="500" fill="#0B2A3C" fill-opacity="0.56">Pool window vanishes</text>
+          <text x="454" y="158" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="500" fill="#0B2A3C" fill-opacity="0.56">Drifting toward guilt</text>
+        </svg>
+
+        <!-- UI SNIPPET: COMPETITOR FAIL STATE -->
+        <div class="competitor-connector" aria-hidden="true"></div>
+        <div class="ui-snippet competitor-snippet">
+          <span class="snippet-tag">Missed</span>
+          <div class="snippet-title">90-min Pool · Threshold set</div>
+          <div class="snippet-sub">You're 1 day behind plan. Streak broken.</div>
+          <div class="snippet-cta">Resume plan →</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TIME AXIS -->
+    <div class="time-axis">
+      <div class="time-axis-row">
+        <div class="time-marker" style="left: calc(20/800 * 100%);">
+          <span class="tick"></span>
+          <span class="time">12:00 PM</span>
+          <span class="event">Lunch.<br/>Day still on plan.</span>
+        </div>
+        <div class="time-marker" style="left: calc(165/800 * 100%);">
+          <span class="tick"></span>
+          <span class="time">2:00 PM</span>
+          <span class="event">Meeting<br/>runs long.</span>
+        </div>
+        <div class="time-marker decision" style="left: calc(200/800 * 100%);">
+          <span class="tick"></span>
+          <span class="time">2:30 PM</span>
+          <span class="event">Pool session<br/>is unreachable.</span>
+        </div>
+        <div class="time-marker" style="left: calc(454/800 * 100%);">
+          <span class="tick"></span>
+          <span class="time">6:00 PM</span>
+          <span class="event">Home.<br/>Family / dinner.</span>
+        </div>
+        <div class="time-marker" style="left: calc(671/800 * 100%);">
+          <span class="tick"></span>
+          <span class="time">9:00 PM</span>
+          <span class="event">Evening glance.<br/>Second product touch.</span>
+        </div>
+        <div class="time-marker" style="left: calc(780/800 * 100%);">
+          <span class="tick"></span>
+          <span class="time">10:30 PM</span>
+          <span class="event">Sleep.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATLAN TRACK -->
+    <div class="track atlan">
+      <div class="track-meta">
+        <span class="track-label">Atlan</span>
+        <span class="track-emotion">Brief dip, recovery through the swap <span class="arrow">↗</span></span>
+      </div>
+      <div class="track-canvas">
+
+        <svg class="curve-svg" viewBox="0 0 800 200" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="atl-fade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0E8A9A" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="#0E8A9A" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Neutral baseline -->
+          <line x1="20" y1="100" x2="780" y2="100" stroke="#0B2A3C" stroke-opacity="0.10" stroke-dasharray="2 4"/>
+          <text x="780" y="95" text-anchor="end" font-family="Manrope" font-size="9" font-weight="600" letter-spacing="0.18em" fill="#0B2A3C" fill-opacity="0.4">NEUTRAL</text>
+
+          <!-- Area fill under curve (from curve to baseline above) -->
+          <path d="M 20,72
+                   C 80,76 130,90 165,100
+                   C 180,104 195,108 201,108
+                   C 215,98 230,82 240,76
+                   C 320,72 390,68 454,64
+                   C 530,56 600,48 671,42
+                   C 710,46 750,50 780,52
+                   L 780,100 L 20,100 Z"
+                fill="url(#atl-fade)"/>
+
+          <!-- Atlan curve -->
+          <path d="M 20,72
+                   C 80,76 130,90 165,100
+                   C 180,104 195,108 201,108
+                   C 215,98 230,82 240,76
+                   C 320,72 390,68 454,64
+                   C 530,56 600,48 671,42
+                   C 710,46 750,50 780,52"
+                stroke="#0E8A9A"
+                stroke-width="2.5"
+                fill="none"
+                stroke-linecap="round"/>
+
+          <!-- Anchor dots -->
+          <circle cx="20" cy="72" r="3.5" fill="#fff" stroke="#0E8A9A" stroke-width="1.5"/>
+          <circle cx="165" cy="100" r="3.5" fill="#fff" stroke="#0E8A9A" stroke-width="1.5"/>
+          <!-- 2:30 PM dip + swap recovery: paired anchors -->
+          <circle cx="201" cy="108" r="3.5" fill="#fff" stroke="#0E8A9A" stroke-width="1.5"/>
+          <!-- Swap recovery moment — Coral accent -->
+          <circle cx="240" cy="76" r="5" fill="#FF6A3D"/>
+          <circle cx="240" cy="76" r="9" fill="none" stroke="#FF6A3D" stroke-opacity="0.30" stroke-width="2"/>
+          <circle cx="454" cy="64" r="3.5" fill="#fff" stroke="#0E8A9A" stroke-width="1.5"/>
+          <!-- 9 PM executes adjusted session: filled tide -->
+          <circle cx="671" cy="42" r="5" fill="#0E8A9A"/>
+          <circle cx="671" cy="42" r="9" fill="none" stroke="#0E8A9A" stroke-opacity="0.30" stroke-width="2"/>
+          <circle cx="780" cy="52" r="3.5" fill="#fff" stroke="#0E8A9A" stroke-width="1.5"/>
+
+          <!-- Annotations -->
+          <text x="454" y="50" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="500" fill="#0B2A3C" fill-opacity="0.56">Steady — load is on track</text>
+          <text x="671" y="28" text-anchor="middle" font-family="Manrope" font-size="10" font-weight="600" fill="#0A6F7D">Executes adjusted session</text>
+        </svg>
+
+        <!-- UI SNIPPET: ATLAN SESSION SWAPPER -->
+        <div class="atlan-connector" aria-hidden="true"></div>
+        <div class="ui-snippet atlan-snippet">
+          <span class="snippet-tag">Session Adjusted</span>
+          <div class="swap-row">
+            <span class="swap-original">90-min pool · threshold</span>
+          </div>
+          <div class="swap-arrow">↓</div>
+          <div class="swap-new">45-min Vasa erg · threshold equivalent</div>
+          <div class="swap-load">Weekly load: still on track.</div>
+          <div class="swap-affirm">Smart call — protect the week.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER TAKEAWAY -->
+  <footer class="card-footer">
+    <p class="takeaway">
+      The disruption is the same. The <span class="accent">interpretation is the product's choice</span>.
+    </p>
+    <div class="meta-row">
+      <span class="meta-label">Sources</span>
+      <span>Phase 2 Output 2 Cluster 3 (schedule fragmentation as the rupture point) + Cluster 5 (autonomy-supportive adherence). Voice ratios for in-card copy per Output 4: competitor snippet reproduces a banned voice pattern intentionally for contrast; Atlan snippet at 60/40 Sage/Hero per the Session Swapper surface spec.</span>
+    </div>
+  </footer>
+
+</article>
+</div>
+</body>
+</html>

@@ -222,7 +222,7 @@ function OutcomesTiles() {
             What I can claim. <em>What I can't.</em>
           </h2>
           <p className="section-deck">
-            The PWA is functional but has not been launched to users — there are no outcomes yet, only
+            The mobile app is functional but has not been launched to users — there are no outcomes yet, only
             evidence and hypotheses. Every claim below is tagged <strong>DOCUMENTED</strong> (verified
             against design files, not user data), <strong>EXPECTED</strong> (a hypothesis with an explicit
             measurement plan and falsification condition), or <strong>RECOMMENDED</strong> (a next step,
@@ -499,7 +499,7 @@ function HonestySection() {
         <div className="honesty-block" style={{ borderLeftColor: 'var(--coral)' }}>
           <div className="label" style={{ color: 'var(--coral)' }}>Global honesty block</div>
           <p className="body mt-md" style={{ maxWidth: 820 }}>
-            Atlan Performance is a <strong>self-initiated UX concept project.</strong> The PWA is functional
+            Atlan Performance is a <strong>self-initiated UX concept project.</strong> The mobile app is functional
             but has not been launched to users. The persona is a synthesis from secondary research and
             informal conversations — not from a recruited research panel. No quote in this case study is
             attributed to an individual. Numeric claims are tagged <strong>MEASURED</strong> or
@@ -513,7 +513,7 @@ function HonestySection() {
             <div className="eyebrow"><span className="num">→</span> AI-assistance disclosure</div>
             <h3 className="lead mt-md">Acceleration, not authorship.</h3>
             <p className="body mt-md">
-              The implementation of this PWA used <strong>Cursor</strong>, <strong>Claude Code</strong>,
+              The implementation of this mobile app used <strong>Cursor</strong>, <strong>Claude Code</strong>,
               and <strong>Codex</strong> as code-acceleration tools. The case study's web page and deck
               use Claude Design as a layout-and-render tool.
             </p>
@@ -542,9 +542,9 @@ function HonestySection() {
             <div className="eyebrow"><span className="num">→</span> What's not in scope</div>
             <ul className="bullets mt-md">
               <li>A recruited research panel and formal moderated interviews — secondary literature only.</li>
-              <li>HealthKit / Health Connect deep integration — limited under PWA architecture.</li>
+              <li>HealthKit / Health Connect deep integration — limited under this architecture.</li>
               <li>A coaches-marketplace layer — distinct product surface, intentionally separate.</li>
-              <li>Live retention data — the PWA has not been launched to users.</li>
+              <li>Live retention data — the app has not been launched to users.</li>
               <li>A Spanish version of this case study — the product is bilingual; the case study is English-only by lock from Phase 1.</li>
             </ul>
           </div>
@@ -588,6 +588,8 @@ function HonestySection() {
             </div>
           </div>
           <div className="foot-right">
+            <a href="https://atlan-app-web-preview.vercel.app/" className="link" target="_blank" rel="noopener noreferrer">Open the mobile-app preview<svg width="11" height="11" viewBox="0 0 11 11" fill="none" style={{ display: 'inline-block', marginLeft: 5, verticalAlign: -1 }} aria-hidden="true"><path d="M3 1.5L8 5.5L3 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
+            <a href="https://atlan-performance.vercel.app/" className="link" style={{ opacity: 0.7 }} target="_blank" rel="noopener noreferrer">Website (reference)<svg width="11" height="11" viewBox="0 0 11 11" fill="none" style={{ display: 'inline-block', marginLeft: 5, verticalAlign: -1 }} aria-hidden="true"><path d="M3 1.5L8 5.5L3 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
             <a href="Atlan Deck.html" className="link">View the deck<svg width="11" height="11" viewBox="0 0 11 11" fill="none" style={{ display: 'inline-block', marginLeft: 5, verticalAlign: -1 }} aria-hidden="true"><path d="M3 1.5L8 5.5L3 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
             <span className="mono" style={{ color: 'var(--foam-40)' }}>v0.1 · May 2026</span>
           </div>

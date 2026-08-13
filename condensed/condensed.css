@@ -103,3 +103,8 @@
 .cs-footer .fine{font:500 12px/1 var(--body);color:var(--abyss-40)}
 
 .cs-proto-note{margin-top:20px;padding:16px 20px;border:1px dashed var(--abyss-24);border-radius:4px;font:400 13.5px/1.5 var(--body);color:var(--abyss-56)}
+.cs-proto-note a{font-weight:600;color:var(--tide-deep);text-decoration:none;border-bottom:1px solid currentColor}
+.cs-proto-note a:hover{color:var(--coral)}
+.cs-proto-note .cs-proto-ref{display:block;margin-top:6px;font-size:12.5px;color:var(--abyss-40)}
+.cs-proto-note .cs-proto-ref a{font-weight:500;color:var(--abyss-56)}
+.cs-proto-note .cs-proto-ref a:hover{color:var(--tide-deep)}

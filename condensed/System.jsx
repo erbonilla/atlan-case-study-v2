@@ -117,8 +117,10 @@ function CondensedFooter() {
   return (
     <footer className="cs-section cs-shell cs-footer">
       <div className="links">
+        <a href="https://atlan-app-web-preview.vercel.app/" target="_blank" rel="noopener noreferrer">Open the mobile-app preview<Chevron /></a>
         <a href="Atlan Case Study - Deep Dive.html">Full deep-dive study<Chevron /></a>
         <a href="Atlan Deck.html">View the deck<Chevron /></a>
+        <a href="https://atlan-performance.vercel.app/" style={{ opacity: 0.7 }} target="_blank" rel="noopener noreferrer">Website (reference)<Chevron /></a>
         <a href="mailto:erbonilla@outlook.com">erbonilla@outlook.com</a>
       </div>
       <span className="fine">Atlan Performance · Edgar Bonilla · May 2026</span>

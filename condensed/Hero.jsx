@@ -25,7 +25,7 @@ function CsHero() {
       <div className="cs-hero-top">
         <span className="cs-status-chip"><span className="dot"></span>Self-initiated concept — functional prototype, not launched to users</span>
       </div>
-      <h1>Designing a coaching PWA that adapts when life interrupts training.</h1>
+      <h1>Designing a coaching mobile app that adapts when life interrupts training.</h1>
       <p className="cs-hero-summary">
         Atlan is a self-initiated, offline-first coaching concept for bilingual endurance athletes.
         I designed and built the product around one premise: when a demanding week disrupts training,
@@ -41,7 +41,7 @@ function CsHero() {
         <span><strong>Role</strong> — Product strategy, UX/UI, brand system, prototype implementation</span>
         <span><strong>Team</strong> — Solo concept</span>
         <span><strong>Duration</strong> — ~10 weeks</span>
-        <span><strong>Platform</strong> — Offline-first PWA</span>
+        <span><strong>Platform</strong> — Offline-first mobile app</span>
         <span><strong>Languages</strong> — Spanish and English</span>
       </div>
       <div className="cs-hero-photo">
@@ -70,7 +70,24 @@ function SixtySecondCase() {
         ))}
       </div>
       <div className="cs-proto-note">
-        <strong>Prototype:</strong> available live on request during an interview.
+        <strong>Live prototype:</strong>{' '}
+        <a
+          href="https://atlan-app-web-preview.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open the Atlan mobile-app preview
+        </a>
+        <span className="cs-proto-ref">
+          Website (reference):{' '}
+          <a
+            href="https://atlan-performance.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            atlan-performance.vercel.app
+          </a>
+        </span>
       </div>
     </section>
   );

@@ -239,29 +239,30 @@ function ProcessSection() {
         <div className="cols-2 cols-2--wide">
           <div>
             <div className="eyebrow"><span className="num">→</span> Platform choice</div>
-            <h3 className="lead mt-md">Why a PWA, offline-first.</h3>
+            <h3 className="lead mt-md">Why a mobile app, offline-first.</h3>
             <p className="body mt-md">
-              <strong>The pool locker room has no cellular signal.</strong> PWAs with offline-first
-              caching load instantly from local storage. Standard mobile apps assume connectivity.
+              <strong>The pool locker room has no cellular signal.</strong> An offline-first mobile app
+              caches its data locally and loads instantly from storage. Connection-dependent apps
+              assume signal.
             </p>
             <p className="body">
               <strong>Cross-device continuity.</strong> Phone at 5:30 AM, laptop at 9 PM — same product,
               no install.
             </p>
             <p className="body">
-              <strong>App-store bypass.</strong> A PWA can be shared with a URL.
+              <strong>App-store bypass.</strong> The app installs from a URL — no store review, no download.
             </p>
           </div>
           <div>
             <div className="label mb-md">Trade-offs accepted</div>
             <ul className="bullets">
               <li>Native gestures slightly less crisp than a true native app.</li>
-              <li>iOS PWA push notifications constrained by Safari.</li>
+              <li>iOS push notifications constrained by Safari for web-installed apps.</li>
               <li>HealthKit deep integration limited; we rely on manual entry and webview HRM bridges.</li>
             </ul>
             <p className="body mt-lg" style={{ fontSize: 13.5, color: 'var(--abyss-56)' }}>
               The three constraints above were named before the build, not discovered during it.
-              They are the price of the PWA-first architectural choice.
+              They are the price of the web-based mobile-app choice.
             </p>
           </div>
         </div>
@@ -392,12 +393,13 @@ function ProcessSection() {
               Subtraction with redirection, not simplification.
             </p>
             <p>
-              What I traded for it: native swipe gestures are slightly less crisp inside a PWA than in a compiled
-              native app; iOS constrains how the Swapper's push notification can behave versus a native push;
-              and HealthKit-depth data that would make the "silent recalc" smarter isn't available under the
-              PWA architecture, so the recalculation logic is simpler than I'd want in a v2. Those three
-              constraints were named before the build started, not discovered partway through — they're the
-              price of the offline-first PWA decision made in Process, not a surprise that arrived later.
+              What I traded for it: native swipe gestures are slightly less crisp inside a web-based mobile app
+              than in a compiled native app; iOS constrains how the Swapper's push notification can behave
+              versus a native push; and HealthKit-depth data that would make the "silent recalc" smarter isn't
+              available under this architecture, so the recalculation logic is simpler than I'd want in a v2.
+              Those three constraints were named before the build started, not discovered partway through —
+              they're the price of the offline-first mobile-app decision made in Process, not a surprise that
+              arrived later.
             </p>
             <p>
               What I kept: the one-gesture commit, the "Skip today" path treated as a legitimate outcome rather

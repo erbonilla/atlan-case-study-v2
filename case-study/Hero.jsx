@@ -18,11 +18,11 @@ function RoleCard({ inverse = false }) {
   const rows = [
     {
       k: 'Owned',
-      v: 'Strategy · Brand system · Design system tokens · IA · All wireframes & hi-fi UI · Wet Mode interaction model · Session Swapper flow · Bilingual onboarding · PWA implementation in code.',
+      v: 'Strategy · Brand system · Design system tokens · IA · All wireframes & hi-fi UI · Wet Mode interaction model · Session Swapper flow · Bilingual onboarding · Mobile-app implementation in code.',
     },
     {
       k: 'Worked across',
-      v: 'Adherence-science synthesis (SDT, sport-psychology) · Competitive teardown · Technical scoping for offline-first PWA.',
+      v: 'Adherence-science synthesis (SDT, sport-psychology) · Competitive teardown · Technical scoping for an offline-first mobile app.',
     },
     {
       k: 'Gave up',
@@ -51,9 +51,15 @@ function MetaTable() {
   const rows = [
     ['Project', 'Atlan Performance — Liquid Precision & The Quiet Sage'],
     ['Type', 'Self-initiated UX concept project'],
-    ['Status', 'Built (PWA functional); not launched to users'],
+    ['Status', 'Built (mobile app functional); not launched to users'],
     ['Duration', '~10 weeks, end-to-end, solo'],
-    ['Platform', 'Offline-first PWA · Bilingual ES/EN'],
+    ['Platform', 'Offline-first mobile app · Bilingual ES/EN'],
+    [
+      'Live preview',
+      <a href="https://atlan-app-web-preview.vercel.app/" target="_blank" rel="noopener noreferrer" className="link">
+        Open the Atlan mobile-app preview
+      </a>,
+    ],
     ['Voice mix', 'Sage 90 / Hero 10 peak · No Ruler'],
     ['Designer', 'Edgar Bonilla'],
     ['Date', 'May 2026'],
@@ -104,7 +110,7 @@ function Hero() {
 
         <div className="hero-mag-deck-row">
           <p className="hero-deck" style={{ maxWidth: 540 }}>
-            A self-initiated UX concept project — an offline-first, bilingual coaching PWA
+            A self-initiated UX concept project — an offline-first, bilingual coaching mobile app
             for executive endurance athletes (30–50). Built end-to-end solo over ~10 weeks.
             The case study reads as confidently honest, or it doesn't read at all.
           </p>
